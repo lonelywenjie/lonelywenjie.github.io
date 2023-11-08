@@ -1,139 +1,216 @@
+
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Hexo</title>
+        <meta name="author" content="John Doe" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
-  
-  
-<meta name="generator" content="Hexo 7.0.0"></head>
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+<script src="/js/lib/home.js"></script>
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 7.0.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>HEXO</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;HEXO</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div id="home-head">
+    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg"></div>
+    <div id="home-info" @click="homeClick">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>Hexo</h1>
+                <h3></h3>
+                <h5></h5>
+            </div>
+        </span>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+</div>
+<div id="home-posts-wrap" true ref="homePostsWrap">
+    <div id="home-posts">
         
-          <a class="main-nav-link" href="/">Home</a>
+
+<div class="post">
+    <a href="/2023/11/08/test-my-site/">
+        <h2 class="post-title">test_my_site</h2>
+    </a>
+    <div class="category-and-date">
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/11/8
+        </span>
         
-      </nav>
-      <nav id="sub-nav">
         
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
     </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-test-my-site" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/08/test-my-site/" class="article-date">
-  <time class="dt-published" datetime="2023-11-08T08:54:39.000Z" itemprop="datePublished">2023-11-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/08/test-my-site/">test_my_site</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        
-      
+    <div class="description">
+        <div class="content" v-pre>
+            
+            
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/11/08/test-my-site/" data-id="clopixsds0000c8vcga558rmq" data-title="test_my_site" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/08/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-11-08T08:53:17.849Z" itemprop="datePublished">2023-11-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="post-tags">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/08/hello-world/">Hello World</a>
-    </h1>
-  
+        
+    </div>
+    <a href="/2023/11/08/test-my-site/" class="go-post">阅读全文</a>
+</div>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<div class="post">
+    <a href="/2023/11/08/hello-world/">
+        <h2 class="post-title">Hello World</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/11/8
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
@@ -147,44 +224,35 @@
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
-      
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/11/08/hello-world/" data-id="clopixgrf0000kkvcd02r4qme" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-文件上传" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/09/18/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="article-date">
-  <time class="dt-published" datetime="2023-09-18T14:22:47.000Z" itemprop="datePublished">2023-09-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="post-tags">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/09/18/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">文件上传</a>
-    </h1>
-  
+        
+    </div>
+    <a href="/2023/11/08/hello-world/" class="go-post">阅读全文</a>
+</div>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="文件上传漏洞"><a href="#文件上传漏洞" class="headerlink" title="文件上传漏洞"></a>文件上传漏洞</h1><h3 id="文件上传漏洞原理"><a href="#文件上传漏洞原理" class="headerlink" title="文件上传漏洞原理"></a>文件上传漏洞原理</h3><p>文件上传漏洞就是利用服务端代码对文件上传路径变量过滤不严格将可执行的文件上传到一个到服务器中 ，再通过URL去访问以执行恶意代码</p>
+<div class="post">
+    <a href="/2023/09/18/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">
+        <h2 class="post-title">文件上传</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/18
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="文件上传漏洞"><a href="#文件上传漏洞" class="headerlink" title="文件上传漏洞"></a>文件上传漏洞</h1><h3 id="文件上传漏洞原理"><a href="#文件上传漏洞原理" class="headerlink" title="文件上传漏洞原理"></a>文件上传漏洞原理</h3><p>文件上传漏洞就是利用服务端代码对文件上传路径变量过滤不严格将可执行的文件上传到一个到服务器中 ，再通过URL去访问以执行恶意代码</p>
 <h6 id="绕过方法"><a href="#绕过方法" class="headerlink" title="绕过方法"></a>绕过方法</h6><p>1.在前端禁用js 可以使用浏览器插件在页面上禁用掉js就能成功上传</p>
 <p>2.通过抓包修改数据包 抓包后更改Content-Type为允许的类型绕过该代码限制，比如将php文件的Content-Type:application&#x2F;octet-stream修改为image&#x2F;jpeg、image&#x2F;png、image&#x2F;gif 通过修改数据包以后就能成功上传</p>
 <p>3.大小写绕过比如说 .pHP  .aSP</p>
@@ -195,44 +263,35 @@
 <p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230919004035948.png" alt="image-20230919004035948"></p>
 <p>8.条件竞争通过burp抓包上传一个写马的马的文件同时访问和上传一直执行直到有burp有一条访问成功为止</p>
 
-      
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/09/18/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" data-id="clopmhmii000cr8vc4vhb8w9q" data-title="文件上传" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-靶场笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/08/28/%E9%9D%B6%E5%9C%BA%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time class="dt-published" datetime="2023-08-28T04:12:41.000Z" itemprop="datePublished">2023-08-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="post-tags">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/08/28/%E9%9D%B6%E5%9C%BA%E7%AC%94%E8%AE%B0/">靶场笔记</a>
-    </h1>
-  
+        
+    </div>
+    <a href="/2023/09/18/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" class="go-post">阅读全文</a>
+</div>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p> 给我一个网址让我去做渗透192.168.2.197以这个IP为例<br>首先判断他是公网地址还是私网地址然后对他进行信息收集这里可以明显判断出来这是一个私网地址所以直接使用nmap进行端口扫描</p>
+<div class="post">
+    <a href="/2023/08/28/%E9%9D%B6%E5%9C%BA%E7%AC%94%E8%AE%B0/">
+        <h2 class="post-title">靶场笔记</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/28
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p> 给我一个网址让我去做渗透192.168.2.197以这个IP为例<br>首先判断他是公网地址还是私网地址然后对他进行信息收集这里可以明显判断出来这是一个私网地址所以直接使用nmap进行端口扫描</p>
 <p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828122519457.png" alt="image-20230828122519457"></p>
 <p>这里可以看到扫到了两个端口一个是1433一个是27689</p>
 <p>1433是sql server的端口  27689是开放端口我们试图访问一下这个端口</p>
@@ -287,44 +346,35 @@
 <p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828134406447.png" alt="image-20230828134406447"></p>
 <p>成功连接完成渗透</p>
 
-      
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/08/28/%E9%9D%B6%E5%9C%BA%E7%AC%94%E8%AE%B0/" data-id="clopmhmik000hr8vc2cdncj4m" data-title="靶场笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-xss" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/08/10/xss/" class="article-date">
-  <time class="dt-published" datetime="2023-08-10T15:08:52.000Z" itemprop="datePublished">2023-08-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="post-tags">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/08/10/xss/">xss</a>
-    </h1>
-  
+        
+    </div>
+    <a href="/2023/08/28/%E9%9D%B6%E5%9C%BA%E7%AC%94%E8%AE%B0/" class="go-post">阅读全文</a>
+</div>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="跨站脚本漏洞（xss）"><a href="#跨站脚本漏洞（xss）" class="headerlink" title="跨站脚本漏洞（xss）"></a>跨站脚本漏洞（xss）</h1><h3 id="xss的基本概念"><a href="#xss的基本概念" class="headerlink" title="xss的基本概念"></a>xss的基本概念</h3><blockquote>
+<div class="post">
+    <a href="/2023/08/10/xss/">
+        <h2 class="post-title">xss</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/10
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="跨站脚本漏洞（xss）"><a href="#跨站脚本漏洞（xss）" class="headerlink" title="跨站脚本漏洞（xss）"></a>跨站脚本漏洞（xss）</h1><h3 id="xss的基本概念"><a href="#xss的基本概念" class="headerlink" title="xss的基本概念"></a>xss的基本概念</h3><blockquote>
 <ol>
 <li>xss漏洞一直被评估为web漏洞中危害较大的那种，在OWASP TOP10中一直处于前三的江湖地位</li>
 <li>xss漏洞是一种发生在前端的漏洞，所以他的危害对象主要也是前端用户。</li>
@@ -355,46 +405,44 @@
 <p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20231007200221743.png" alt="image-20231007200221743"></p>
 <p>成功获取到登陆人的cookie</p>
 
-      
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/08/10/xss/" data-id="clopmhmid0004r8vceo3m5j6f" data-title="xss" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-sql注入" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/08/08/sql%E6%B3%A8%E5%85%A5/" class="article-date">
-  <time class="dt-published" datetime="2023-08-08T01:36:17.000Z" itemprop="datePublished">2023-08-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="post-tags">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/08/08/sql%E6%B3%A8%E5%85%A5/">sql注入</a>
-    </h1>
-  
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #ff7d73">安全</a>
+        </span>
+        
+    </div>
+    <a href="/2023/08/10/xss/" class="go-post">阅读全文</a>
+</div>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h3 id="什么叫数据库"><a href="#什么叫数据库" class="headerlink" title="什么叫数据库"></a>什么叫数据库</h3><blockquote>
+<div class="post">
+    <a href="/2023/08/08/sql%E6%B3%A8%E5%85%A5/">
+        <h2 class="post-title">sql注入</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/8
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h3 id="什么叫数据库"><a href="#什么叫数据库" class="headerlink" title="什么叫数据库"></a>什么叫数据库</h3><blockquote>
 <p>数据库是以电子方式存储的系统数据集合。它可以包含任何类型的数据，包括文字、数字、图像、视频和文件。您可以使用称为数据库管理系统 (DBMS) 的软件来存储、检索和编辑数据。在计算机系统中，“数据库” 一词也可以指任何 DBMS、数据库系统或与数据库关联的应用程序。</p>
 </blockquote>
 <h3 id="数据库类型"><a href="#数据库类型" class="headerlink" title="数据库类型"></a>数据库类型</h3><blockquote>
@@ -473,46 +521,44 @@
 <p>这个时候就需要我们想办法使用特殊手段对这些过滤的东西进行绕过从而达到查询数据目的</p>
 <p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230808203836404.png" alt="image-20230808203836404"></p>
 
-      
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/08/08/sql%E6%B3%A8%E5%85%A5/" data-id="clopmhmi90001r8vc4a5eep5f" data-title="sql注入" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-信息收集" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/08/04/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" class="article-date">
-  <time class="dt-published" datetime="2023-08-04T08:24:22.000Z" itemprop="datePublished">2023-08-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="post-tags">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/08/04/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a>
-    </h1>
-  
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #00bcd4">安全</a>
+        </span>
+        
+    </div>
+    <a href="/2023/08/08/sql%E6%B3%A8%E5%85%A5/" class="go-post">阅读全文</a>
+</div>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h3 id="1-首先先确认一个目标然后使用ICP备案网查询ICP-IP地址-域名信息备案管理系统-miit-gov-cn-获取目标的域名"><a href="#1-首先先确认一个目标然后使用ICP备案网查询ICP-IP地址-域名信息备案管理系统-miit-gov-cn-获取目标的域名" class="headerlink" title="1.首先先确认一个目标然后使用ICP备案网查询ICP&#x2F;IP地址&#x2F;域名信息备案管理系统 (miit.gov.cn)获取目标的域名"></a>1.首先先确认一个目标然后使用ICP备案网查询<a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">ICP&#x2F;IP地址&#x2F;域名信息备案管理系统 (miit.gov.cn)</a>获取目标的域名</h3><p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86.jpg.jpeg" alt="信息收集.jpg"></p>
+<div class="post">
+    <a href="/2023/08/04/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">
+        <h2 class="post-title">信息收集</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/4
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h3 id="1-首先先确认一个目标然后使用ICP备案网查询ICP-IP地址-域名信息备案管理系统-miit-gov-cn-获取目标的域名"><a href="#1-首先先确认一个目标然后使用ICP备案网查询ICP-IP地址-域名信息备案管理系统-miit-gov-cn-获取目标的域名" class="headerlink" title="1.首先先确认一个目标然后使用ICP备案网查询ICP&#x2F;IP地址&#x2F;域名信息备案管理系统 (miit.gov.cn)获取目标的域名"></a>1.首先先确认一个目标然后使用ICP备案网查询<a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/#/Integrated/index">ICP&#x2F;IP地址&#x2F;域名信息备案管理系统 (miit.gov.cn)</a>获取目标的域名</h3><p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86.jpg.jpeg" alt="信息收集.jpg"></p>
 <h3 id="2-然后使用企查查爱企查查询收集目标信息"><a href="#2-然后使用企查查爱企查查询收集目标信息" class="headerlink" title="2.然后使用企查查爱企查查询收集目标信息"></a>2.然后使用企查查爱企查查询收集目标信息</h3><p>可收集的信息有</p>
 <p>法人 </p>
 <p>公司电话信息（网站管理者或公司固定电话） </p>
@@ -538,46 +584,44 @@
 <p>b.dirb</p>
 <p>使用这两个工具扫描网站的目录查看网页结构</p>
 
-      
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/08/04/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" data-id="clopmhmib0002r8vc8wov27t8" data-title="信息收集" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-计算机基础" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/08/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="article-date">
-  <time class="dt-published" datetime="2023-08-04T02:32:06.000Z" itemprop="datePublished">2023-08-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="post-tags">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/08/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">计算机基础</a>
-    </h1>
-  
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #00bcd4">安全</a>
+        </span>
+        
+    </div>
+    <a href="/2023/08/04/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" class="go-post">阅读全文</a>
+</div>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="1-HTTP响应码"><a href="#1-HTTP响应码" class="headerlink" title="1.HTTP响应码"></a>1.HTTP响应码</h2><h3 id="信息响应-100-199）"><a href="#信息响应-100-199）" class="headerlink" title="信息响应(100-199）"></a>信息响应(100-199）</h3><h3 id="成功响应（200-299）"><a href="#成功响应（200-299）" class="headerlink" title="成功响应（200-299）"></a>成功响应（200-299）</h3><p>200：请求成功</p>
+<div class="post">
+    <a href="/2023/08/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">
+        <h2 class="post-title">计算机基础</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/8/4
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h2 id="1-HTTP响应码"><a href="#1-HTTP响应码" class="headerlink" title="1.HTTP响应码"></a>1.HTTP响应码</h2><h3 id="信息响应-100-199）"><a href="#信息响应-100-199）" class="headerlink" title="信息响应(100-199）"></a>信息响应(100-199）</h3><h3 id="成功响应（200-299）"><a href="#成功响应（200-299）" class="headerlink" title="成功响应（200-299）"></a>成功响应（200-299）</h3><p>200：请求成功</p>
 <p>请求方式：主要的请求方式有两种一个叫“GET”一个叫“POST”</p>
 <p>比如说豆瓣的top250   <a target="_blank" rel="noopener" href="https://movie.douban.com/top250">https://movie.douban.com/top250</a> 这个网站的host就为 movie.douban.com</p>
 <h3 id="重定向信息（300-399）"><a href="#重定向信息（300-399）" class="headerlink" title="重定向信息（300-399）"></a>重定向信息（300-399）</h3><h3 id="客户端错误响应（400-499）"><a href="#客户端错误响应（400-499）" class="headerlink" title="客户端错误响应（400-499）"></a>客户端错误响应（400-499）</h3><p>401：未授权</p>
@@ -614,44 +658,35 @@
 <p>我这只是一些最基础的命令测试需要更详细的请访问</p>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/2761c8c51fab">windows–CMD–命令大全</a></p>
 
-      
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/08/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" data-id="clopmhmii000dr8vc46macc91" data-title="计算机基础" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-靶场的搭建" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/07/29/%E9%9D%B6%E5%9C%BA%E7%9A%84%E6%90%AD%E5%BB%BA/" class="article-date">
-  <time class="dt-published" datetime="2023-07-29T14:23:50.000Z" itemprop="datePublished">2023-07-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="post-tags">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/07/29/%E9%9D%B6%E5%9C%BA%E7%9A%84%E6%90%AD%E5%BB%BA/">靶场的搭建</a>
-    </h1>
-  
+        
+    </div>
+    <a href="/2023/08/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="go-post">阅读全文</a>
+</div>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="靶场的搭建"><a href="#靶场的搭建" class="headerlink" title="靶场的搭建"></a>靶场的搭建</h1><p>1.首先准备搭建靶场的工具</p>
+<div class="post">
+    <a href="/2023/07/29/%E9%9D%B6%E5%9C%BA%E7%9A%84%E6%90%AD%E5%BB%BA/">
+        <h2 class="post-title">靶场的搭建</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/7/29
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="靶场的搭建"><a href="#靶场的搭建" class="headerlink" title="靶场的搭建"></a>靶场的搭建</h1><p>1.首先准备搭建靶场的工具</p>
 <p>这里我会选择使用<a target="_blank" rel="noopener" href="https://www.apachefriends.org/zh_cn/index.html">xampp</a>这款软件来搭建服务器</p>
 <p>使用<a target="_blank" rel="noopener" href="https://notepad-plus-plus.org/downloads/v8.5.4/">npp</a>这个软件来查看和编辑代码</p>
 <p>最重要的是从<a target="_blank" rel="noopener" href="https://github.com/">github</a>上下载一个靶场<a target="_blank" rel="noopener" href="https://github.com/zhuifengshaonianhanlu/pikachu">https://github.com/zhuifengshaonianhanlu/pikachu</a></p>
@@ -676,46 +711,44 @@
 <p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729234757694.png" alt="image-20230729234757694"></p>
 <p>初始化完成以后你的靶场就搭建完成了</p>
 
-      
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/29/%E9%9D%B6%E5%9C%BA%E7%9A%84%E6%90%AD%E5%BB%BA/" data-id="clopmhmij000fr8vc480t09da" data-title="靶场的搭建" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-如何绕过cdn" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/07/29/%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87cdn/" class="article-date">
-  <time class="dt-published" datetime="2023-07-29T12:55:03.000Z" itemprop="datePublished">2023-07-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="post-tags">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/07/29/%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87cdn/">挖掘真实地址</a>
-    </h1>
-  
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #00bcd4">安全</a>
+        </span>
+        
+    </div>
+    <a href="/2023/07/29/%E9%9D%B6%E5%9C%BA%E7%9A%84%E6%90%AD%E5%BB%BA/" class="go-post">阅读全文</a>
+</div>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="绕过cdn"><a href="#绕过cdn" class="headerlink" title="绕过cdn"></a>绕过cdn</h1><h4 id="为什么需要DNS把域名-解析为地址？"><a href="#为什么需要DNS把域名-解析为地址？" class="headerlink" title="为什么需要DNS把域名 解析为地址？"></a>为什么需要DNS把域名 解析为地址？</h4><p>网络通讯大部分是基于TCP&#x2F;IP的，而TCP&#x2F;IP是基于IP地址的，所以计算机在网络上进行通讯时只能识别如IP地址，而不能认识域名。我们没有办法记住很多的IP地址，所以我们在访问网站的时候就会输入诸如 <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> 这样的域名就能访问到相对应的网站，这些域名是有一个名为“DNS”的服务器把输入的域名解析成一个IP地址然后访问这个地址进入对应的页面。</p>
+<div class="post">
+    <a href="/2023/07/29/%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87cdn/">
+        <h2 class="post-title">挖掘真实地址</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/7/29
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <h1 id="绕过cdn"><a href="#绕过cdn" class="headerlink" title="绕过cdn"></a>绕过cdn</h1><h4 id="为什么需要DNS把域名-解析为地址？"><a href="#为什么需要DNS把域名-解析为地址？" class="headerlink" title="为什么需要DNS把域名 解析为地址？"></a>为什么需要DNS把域名 解析为地址？</h4><p>网络通讯大部分是基于TCP&#x2F;IP的，而TCP&#x2F;IP是基于IP地址的，所以计算机在网络上进行通讯时只能识别如IP地址，而不能认识域名。我们没有办法记住很多的IP地址，所以我们在访问网站的时候就会输入诸如 <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> 这样的域名就能访问到相对应的网站，这些域名是有一个名为“DNS”的服务器把输入的域名解析成一个IP地址然后访问这个地址进入对应的页面。</p>
 <h4 id="dns"><a href="#dns" class="headerlink" title="dns"></a>dns</h4><p>DNS(<strong>D</strong>omain <strong>N</strong>ame <strong>S</strong>ystem)翻译过来就是”域名系统“是互联网的一项服务。它作为将域名和IP地址)相互映射的一个分布式数据库，能够使人更方便地访问互联网。DNS使用TCP和UDP端口53。</p>
 <p>他的工作原理如下：</p>
 <p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729210151855.png" alt="image-20230729210151855"></p>
@@ -772,138 +805,108 @@
 <p>例如：*.taobao.com</p>
 <p>这样设置以后所有的子域名都会指向同一ip地址。</p>
 
-      
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/07/29/%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87cdn/" data-id="clopmhmij000er8vc2cl99pz0" data-title="挖掘真实地址" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-  </nav>
-
-</section>
+    <div class="post-tags">
         
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li></ul>
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%AE%89%E5%85%A8/" style="color: #00a596">安全</a>
+        </span>
+        
     </div>
-  </div>
+    <a href="/2023/07/29/%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87cdn/" class="go-post">阅读全文</a>
+</div>
 
 
-  
+        <div class="page-current">
+    <div class="prev">
+        
+    </div>
+    <div class="page-index">
+        
+        <span class="current">1</span>
+        
+        <span>
+            <a class="page-num" href="/page/2/">2</a>
+            
+            
+        </span>
+        
+    </div>
+    <div class="next">
+        
+        <a class="page-num" href="/page/2/">
+            <i class="fa-solid fa-caret-right fa-fw"></i>
+        </a>
+        
+    </div>
+</div>
+
+    </div>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 10px;">安全</a>
-    </div>
-  </div>
+    <div id="home-card">
+        <div id="card-style">
+    <div id="card-div">
+        <div class="avatar">
+            <img src="/images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name">John Doe</div>
+        <div class="description">
+            <p>Description<br>…</p>
 
-  
+        </div>
+        
+        
+        <div class="friend-links">
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://argvchs.github.io">Argvchs</a>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+    </div>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li></ul>
-    </div>
-  </div>
+</div>
 
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 Hexo
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;John Doe
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
         
-          <li>
-            <a href="/2023/11/08/test-my-site/">test_my_site</a>
-          </li>
-        
-          <li>
-            <a href="/2023/11/08/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2023/09/18/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">文件上传</a>
-          </li>
-        
-          <li>
-            <a href="/2023/08/28/%E9%9D%B6%E5%9C%BA%E7%AC%94%E8%AE%B0/">靶场笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2023/08/10/xss/">xss</a>
-          </li>
-        
-      </ul>
     </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
 </footer>
 
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+    </body>
 </html>
