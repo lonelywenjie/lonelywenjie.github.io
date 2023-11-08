@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>sql注入 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="数据库什么叫数据库 数据库是以电子方式存储的系统数据集合。它可以包含任何类型的数据，包括文字、数字、图像、视频和文件。您可以使用称为数据库管理系统 (DBMS) 的软件来存储、检索和编辑数据。在计算机系统中，“数据库” 一词也可以指任何 DBMS、数据库系统或与数据库关联的应用程序。  数据库类型 关系型数据库关系型数据库是一个结构化的数据库，创建在关系模型（二维表格模型）基础上，一般面向于记录。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sql注入">
+<meta property="og:url" content="http://example.com/2023/08/08/sql%E6%B3%A8%E5%85%A5/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数据库什么叫数据库 数据库是以电子方式存储的系统数据集合。它可以包含任何类型的数据，包括文字、数字、图像、视频和文件。您可以使用称为数据库管理系统 (DBMS) 的软件来存储、检索和编辑数据。在计算机系统中，“数据库” 一词也可以指任何 DBMS、数据库系统或与数据库关联的应用程序。  数据库类型 关系型数据库关系型数据库是一个结构化的数据库，创建在关系模型（二维表格模型）基础上，一般面向于记录。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821191950958.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821192043227.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821192119397.png">
+<meta property="og:image" content="http://example.com/sql%E6%B3%A8%E5%85%A5.assets/image-20230821192149975.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821192631697.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821195947891.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821205544092.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821213224093.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821215017263.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230808203836404.png">
+<meta property="article:published_time" content="2023-08-08T01:36:17.000Z">
+<meta property="article:modified_time" content="2023-08-28T05:53:50.502Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="安全">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821191950958.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-sql注入" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/08/sql%E6%B3%A8%E5%85%A5/" class="article-date">
+  <time class="dt-published" datetime="2023-08-08T01:36:17.000Z" itemprop="datePublished">2023-08-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      sql注入
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><h3 id="什么叫数据库"><a href="#什么叫数据库" class="headerlink" title="什么叫数据库"></a>什么叫数据库</h3><blockquote>
+<p>数据库是以电子方式存储的系统数据集合。它可以包含任何类型的数据，包括文字、数字、图像、视频和文件。您可以使用称为数据库管理系统 (DBMS) 的软件来存储、检索和编辑数据。在计算机系统中，“数据库” 一词也可以指任何 DBMS、数据库系统或与数据库关联的应用程序。</p>
+</blockquote>
+<h3 id="数据库类型"><a href="#数据库类型" class="headerlink" title="数据库类型"></a>数据库类型</h3><blockquote>
+<h5 id="关系型数据库"><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h5><p>关系型数据库是一个结构化的数据库，创建在关系模型（二维表格模型）基础上，一般面<br>向于记录。<br>SQL 语句（标准数据查询语言）就是一种基于关系型数据库的语言，用于执行对关系型数<br>据库中数据的检索和操作。<br>主流的关系型数据库包括 Oracle、MySQL、SQL Server、Microsoft Access、DB2 等。</p>
+<h5 id="非关系型数据库"><a href="#非关系型数据库" class="headerlink" title="非关系型数据库"></a>非关系型数据库</h5><p>NoSQL(NoSQL &#x3D; Not Only SQL )，意思是“不仅仅是 SQL”，是非关系型数据库的总称。<br>除了主流的关系型数据库外的数据库，都认为是非关系型。<br>主流的 NoSQL 数据库有 Redis、MongBD、Hbase、CouhDB 等</p>
+</blockquote>
+<blockquote>
+<h5 id="常见数据库"><a href="#常见数据库" class="headerlink" title="常见数据库"></a>常见数据库</h5></blockquote>
+<p>一、关系型数据库</p>
+<blockquote>
+<ol>
+<li>MySql数据库 ，默认端口是: 3306；</li>
+<li>Oracle数据库 ，默认端口号为：1521；</li>
+<li>Sql Server数据库 ，默认端口号为：1433；</li>
+<li>DB2数据库， 默认端口号为：5000；</li>
+<li>PostgreSQL数据库， 默认端口号为：5432；</li>
+<li>国产的DM达梦数据库， 默认端口号为：5236。</li>
+</ol>
+</blockquote>
+<p>二、NoSql数据库（非关系型数据库）：</p>
+<blockquote>
+<ol>
+<li>Redis数据库，默认端口号：6379；</li>
+<li>Memcached数据库，默认端口号：11211 ；</li>
+<li>MongoDB数据库，默认端口号：27017</li>
+</ol>
+</blockquote>
+<h2 id="mysql常用命令"><a href="#mysql常用命令" class="headerlink" title="mysql常用命令"></a>mysql常用命令</h2><p>mysql -u root -p  #输入密码登陆root用户<br>show databases;  #查看数据库列表<br>use  school   #选择使用数据库school</p>
+<p>create database  school ;  #创建数据库school</p>
+<p>drop database school;    #删除数据库school</p>
+<blockquote>
+<p>create table student(   #创建表</p>
+</blockquote>
+<blockquote>
+<p>student_id int not null auto_increment, </p>
+</blockquote>
+<p>##创建列表student_id 数据类型为整形不能为空并设置为主键（auto_increment）下面也是同理</p>
+<blockquote>
+<p>name varchar(10) not null,   </p>
+</blockquote>
+<blockquote>
+<p>hender varchar(10) not null,</p>
+</blockquote>
+<blockquote>
+<p>birthday varchar(10) not null;</p>
+</blockquote>
+<h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><p>   插入数据<br>insert into student<br>values(  )  #()里面写的是要插入的内容<br>增加一列<br>alter table school add </p>
+<h2 id="改"><a href="#改" class="headerlink" title="改"></a>改</h2><p>更新表中的数据<br>update student set  birthday&#x3D;”19991204”  where name&#x3D;”张三”；</p>
+<h2 id="删"><a href="#删" class="headerlink" title="删"></a>删</h2><p>DELETE FROM name  WHERE student;</p>
+<h2 id="查"><a href="#查" class="headerlink" title="查"></a>查</h2><p>select * from student      ##查询所有的数据来着student这个表<br>union select     ##联合查询连同前面的一起查询<br>select  concat（name，birthday）    ##把两个字符串连接起来变成一个字符串<br>group_concat（id）  ##把id的内容全显示在一行<br>ORDER BY    ##用于对结果集按照一个列或者多个列进行排序</p>
+<p>substring（admin，1，1）    #截取admin这个字符串的第一字母一次截取一位</p>
+<h2 id="sql注入"><a href="#sql注入" class="headerlink" title="sql注入"></a>sql注入</h2><p>SQL注入用户通过浏览器或者其他客户端将恶意SQL语句插入到网站参数中，网站应用程序未经过过滤，将恶意SQL语句带入数据库进行执行，通过数据库获取了敏感的信息或者执行了其他恶意操作。</p>
+<h5 id="sql注的原因"><a href="#sql注的原因" class="headerlink" title="sql注的原因"></a>sql注的原因</h5><p>用户提交的参数数据未做充分检查过滤</p>
+<h5 id="sql注入危害"><a href="#sql注入危害" class="headerlink" title="sql注入危害"></a>sql注入危害</h5><p>1.数据泄露：数据库中存放的用户隐私信息的泄露<br>2.网页纂改：通过操作数据库对特定的网页进行纂改<br>3.网站挂马：修改数据库一些字段的值，嵌入木马链接，进行挂马攻击<br>4.服务器被远程控制被安装后门：经由数据库服务器提供的操作系统支持，让黑客得以修改或控制操作系统<br>5.数据破坏：数据库服务器被攻击，数据库的系统管理员帐户被窜改，系统瘫痪</p>
+<h3 id="sql注入类型"><a href="#sql注入类型" class="headerlink" title="sql注入类型"></a>sql注入类型</h3><h4 id="按数据类型分可以分为数字型和字符型"><a href="#按数据类型分可以分为数字型和字符型" class="headerlink" title="按数据类型分可以分为数字型和字符型"></a>按数据类型分可以分为数字型和字符型</h4><p>如何判断是数字型还是字符型 写入1  and 1&#x3D;1  再写入and 1&#x3D;2 在语句最后使用–+把后面的语句进行注释 来查看页面是否正常回显来判断是字符注入还是数字注入<br>一般的过程为<br>1.判断注入点</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821191950958.png" alt="image-20230821191950958"></p>
+<p>2.猜字段数：order by<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821192043227.png" alt="image-20230821192043227"></p>
+<p>3.找回显：union select<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821192119397.png" alt="image-20230821192119397"><br>4.然后在回显处注入 database()、user（）等等函数<img src="/sql%E6%B3%A8%E5%85%A5.assets/image-20230821192149975.png" alt="image-20230821192149975"></p>
+<h4 id="按照返回结果可以分为盲注型和报错型"><a href="#按照返回结果可以分为盲注型和报错型" class="headerlink" title="按照返回结果可以分为盲注型和报错型"></a>按照返回结果可以分为盲注型和报错型</h4><p>bool注入：bool注入是盲注的一种，与报错注入不同，bool注入没有任何报错信息输出，页面返回只有正常和不正常两种状态，攻击者只能通过返回的这两个状态来判断输入的测试SQL语句是否正确，从而判断数据库中的存储了哪些信息。</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821192631697.png" alt="image-20230821192631697"></p>
+<p>注入过程大致一样只是在注入是根据页面的正确与否来判断注入的语句是否正确</p>
+<p>因为页面没有回显点所以只能使用burp抓包进行爆破来读取内容</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821195947891.png" alt="image-20230821195947891"></p>
+<p>如图成功爆破出了数据库名</p>
+<h4 id="当页面彻底没有反应的时候就要使用睡眠注入了"><a href="#当页面彻底没有反应的时候就要使用睡眠注入了" class="headerlink" title="当页面彻底没有反应的时候就要使用睡眠注入了"></a>当页面彻底没有反应的时候就要使用睡眠注入了</h4><p>利用sleep函数去寻找闭合点</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821205544092.png" alt="image-20230821205544092"></p>
+<p>这里可以看到他闭合了就网页就开始休眠同理也能够</p>
+<p>使用burp根据休眠时间成功爆破出想要的数据</p>
+<h4 id="当一些查询的关键字被过滤了无法进行查询的时候可以使用报错注入"><a href="#当一些查询的关键字被过滤了无法进行查询的时候可以使用报错注入" class="headerlink" title="当一些查询的关键字被过滤了无法进行查询的时候可以使用报错注入"></a>当一些查询的关键字被过滤了无法进行查询的时候可以使用报错注入</h4><p>and extractvalue(1,concat(0x7e,(database()),0x7e)) </p>
+<p>使用报错语句就能成功回显</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821213224093.png" alt="image-20230821213224093"></p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="宽字节注入（）"><a href="#宽字节注入（）" class="headerlink" title="宽字节注入（）"></a>宽字节注入（）</h4><p>   宽字节注入漏洞产生的原因：开发者为了防止出现SQL注入攻击，将用户输入的数据用addslashes等函数进行过滤。addslashes等函数会默认将单引号等字符进行转义，这样就可以避免注入。宽字节注入产生的原因是MySQL在使用GBK编码的时候，如果第一个字符的ASCII码大于128时，会认为两个字符是一个汉字，会将后面的转义字符“\”吃掉，拼接为汉字，这样就可以将SQL语句闭合，造成宽字节注入。</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230821215017263.png" alt="image-20230821215017263"></p>
+<h4 id="二次注入"><a href="#二次注入" class="headerlink" title="二次注入"></a>二次注入</h4><p>先往数据库里面写入一条数据污染数据库然后在修改时直接利用污染的数据达到修改管理员密码的目的</p>
+<h4 id="sqlmap"><a href="#sqlmap" class="headerlink" title="sqlmap"></a>sqlmap</h4><h4 id="sql注入绕过"><a href="#sql注入绕过" class="headerlink" title="sql注入绕过"></a>sql注入绕过</h4><p>有些站点会对sql语句空格特殊字符进行严格的过滤就导致写入的sql语句不能正常执行</p>
+<p>这个时候就需要我们想办法使用特殊手段对这些过滤的东西进行绕过从而达到查询数据目的</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230808203836404.png" alt="image-20230808203836404"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/08/08/sql%E6%B3%A8%E5%85%A5/" data-id="clopmhmi90001r8vc4a5eep5f" data-title="sql注入" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/08/10/xss/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          xss
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/08/04/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">信息收集</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 10px;">安全</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/11/08/test-my-site/">test_my_site</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/08/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/18/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">文件上传</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/28/%E9%9D%B6%E5%9C%BA%E7%AC%94%E8%AE%B0/">靶场笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/10/xss/">xss</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

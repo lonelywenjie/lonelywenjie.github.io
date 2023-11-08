@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>挖掘真实地址 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="绕过cdn为什么需要DNS把域名 解析为地址？网络通讯大部分是基于TCP&#x2F;IP的，而TCP&#x2F;IP是基于IP地址的，所以计算机在网络上进行通讯时只能识别如IP地址，而不能认识域名。我们没有办法记住很多的IP地址，所以我们在访问网站的时候就会输入诸如 www.baidu.com 这样的域名就能访问到相对应的网站，这些域名是有一个名为“DNS”的服务器把输入的域名解析成一个IP地址然">
+<meta property="og:type" content="article">
+<meta property="og:title" content="挖掘真实地址">
+<meta property="og:url" content="http://example.com/2023/07/29/%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87cdn/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="绕过cdn为什么需要DNS把域名 解析为地址？网络通讯大部分是基于TCP&#x2F;IP的，而TCP&#x2F;IP是基于IP地址的，所以计算机在网络上进行通讯时只能识别如IP地址，而不能认识域名。我们没有办法记住很多的IP地址，所以我们在访问网站的时候就会输入诸如 www.baidu.com 这样的域名就能访问到相对应的网站，这些域名是有一个名为“DNS”的服务器把输入的域名解析成一个IP地址然">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729210151855.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729210539740.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729212733442.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729223053025.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729220230437.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729220420183.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729221234391.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729221251550.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230731154435357.png">
+<meta property="article:published_time" content="2023-07-29T12:55:03.000Z">
+<meta property="article:modified_time" content="2023-07-31T08:17:40.996Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="安全">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729210151855.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-如何绕过cdn" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/29/%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87cdn/" class="article-date">
+  <time class="dt-published" datetime="2023-07-29T12:55:03.000Z" itemprop="datePublished">2023-07-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      挖掘真实地址
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="绕过cdn"><a href="#绕过cdn" class="headerlink" title="绕过cdn"></a>绕过cdn</h1><h4 id="为什么需要DNS把域名-解析为地址？"><a href="#为什么需要DNS把域名-解析为地址？" class="headerlink" title="为什么需要DNS把域名 解析为地址？"></a>为什么需要DNS把域名 解析为地址？</h4><p>网络通讯大部分是基于TCP&#x2F;IP的，而TCP&#x2F;IP是基于IP地址的，所以计算机在网络上进行通讯时只能识别如IP地址，而不能认识域名。我们没有办法记住很多的IP地址，所以我们在访问网站的时候就会输入诸如 <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> 这样的域名就能访问到相对应的网站，这些域名是有一个名为“DNS”的服务器把输入的域名解析成一个IP地址然后访问这个地址进入对应的页面。</p>
+<h4 id="dns"><a href="#dns" class="headerlink" title="dns"></a>dns</h4><p>DNS(<strong>D</strong>omain <strong>N</strong>ame <strong>S</strong>ystem)翻译过来就是”域名系统“是互联网的一项服务。它作为将域名和IP地址)相互映射的一个分布式数据库，能够使人更方便地访问互联网。DNS使用TCP和UDP端口53。</p>
+<p>他的工作原理如下：</p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729210151855.png" alt="image-20230729210151855"></p>
+<h4 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h4><p>cdn(<strong>C</strong>ontent <strong>D</strong>elivery <strong>N</strong>etwork或<strong>C</strong>ontent <strong>D</strong>istribution <strong>N</strong>etwork)的缩写翻译过来即<strong>内容分发网络</strong>是指一种通过互联网互相连接的电脑网络系统，利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、视频、应用程序及其他文件发送给用户，来提供高性能、可扩展性及低成本的网络内容传递给用户。</p>
+<p>cdn还有个好处就是能够隐藏自己的真实IP让攻击者找不到真实的IP无法攻击。但是这也不是绝对的，还能通过一些特殊的方法和手段去绕过cdn，比如说使用</p>
+<blockquote>
+<ol>
+<li>nslookup</li>
+</ol>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729210539740.png" alt="image-20230729210539740"></p>
+<p>如果DNS解析出多个IP则大概率使用了cdn服务。</p>
+<blockquote>
+<ol start="2">
+<li>全球ping</li>
+</ol>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://ping.chinaz.com/">https://ping.chinaz.com/</a></p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729212733442.png" alt="image-20230729212733442"></p>
+<p>查看ping的IP结果是否唯一若不唯一大概率使用了cdn服务</p>
+<p>或者使用别的办法绕cdn比如说挖掘子域名因为一些大型网站项目众多有一些子资产可能没有使用cdn这样我我们就能从子域名入手来查找真实的IP地址</p>
+<blockquote>
+<ol start="3">
+<li>例如：Layer子域名挖掘机 、subDomainsBrute等等工具</li>
+</ol>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729223053025.png" alt="image-20230729223053025"></p>
+<blockquote>
+<ol start="4">
+<li>查找网站历史DNS</li>
+</ol>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://crt.sh/">https://crt.sh/</a></p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729220230437.png" alt="image-20230729220230437"></p>
+<p><a target="_blank" rel="noopener" href="https://www.dnsdb.io/zh-cn">https://www.dnsdb.io/zh-cn</a></p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729220420183.png" alt="image-20230729220420183"></p>
+<blockquote>
+<ol start="5">
+<li>空间搜索引擎</li>
+</ol>
+</blockquote>
+<p>钟馗之眼：<a target="_blank" rel="noopener" href="https://www.zoomeye.org/">https://www.zoomeye.org/</a></p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729221234391.png" alt="image-20230729221234391"></p>
+<p>撒旦：<a target="_blank" rel="noopener" href="https://www.shodan.io/">https://www.shodan.io/</a></p>
+<p><img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230729221251550.png" alt="image-20230729221251550"></p>
+<p>fofa：<a target="_blank" rel="noopener" href="https://fofa.info/">https://fofa.info/</a> 	<img src="https://raw.githubusercontent.com/lonelywenjie/image/main/img/image-20230731154435357.png" alt="image-20230731154435357"></p>
+<p>等等工具进行查询</p>
+<blockquote>
+<ol start="6">
+<li>泛解析</li>
+</ol>
+</blockquote>
+<p>泛解析：是指利用 <strong>“ * ”</strong> 来做子域名，实现所有的子域名都指向同一个IP地址</p>
+<p>例如：*.taobao.com</p>
+<p>这样设置以后所有的子域名都会指向同一ip地址。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/07/29/%E5%A6%82%E4%BD%95%E7%BB%95%E8%BF%87cdn/" data-id="clopmhmij000er8vc2cl99pz0" data-title="挖掘真实地址" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/07/29/%E9%9D%B6%E5%9C%BA%E7%9A%84%E6%90%AD%E5%BB%BA/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          靶场的搭建
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/07/26/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">我的hexo的部署</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%85%A8/" rel="tag">安全</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/%E5%AE%89%E5%85%A8/" style="font-size: 10px;">安全</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">September 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/11/08/test-my-site/">test_my_site</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/08/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/18/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">文件上传</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/28/%E9%9D%B6%E5%9C%BA%E7%AC%94%E8%AE%B0/">靶场笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/10/xss/">xss</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
